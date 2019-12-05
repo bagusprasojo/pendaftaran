@@ -54,8 +54,14 @@
                     } 
 
 					if($db_akses->SaveToDB($peserta)){
-						exit("<script>window.alert('Berhasil Upload Dokumen');
-                        window.location='pendaftaran_upload_file.php';</script>");
+						if($_POST['jenis_dokumen'] == 'img_kwitansi'){
+                                
+                        } else {                        
+                            exit("<script>window.alert('Berhasil Upload Dokumen');
+                            window.location='pendaftaran_upload_file.php';</script>");
+                        }
+
+                        
 					}else{
 						exit("<script>window.alert('Gagal Upload Dokumen');
                             document.location.href='javascript:history.go(-1)';</script>");

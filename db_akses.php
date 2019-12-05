@@ -47,6 +47,8 @@
             $l_peserta = $this->OpenQueryArray($sSQL);
             if ($l_peserta['id'] != ''){
                 $AObject->id                = $l_peserta['id'];
+
+                $AObject->is_admin          = $l_peserta['is_admin'];
                 $AObject->nama              = $l_peserta['nama'];
                 $AObject->email             = $l_peserta['email'];
                 $AObject->tempat_lahir      = $l_peserta['tempat_lahir'];
@@ -67,8 +69,8 @@
                 $AObject->img_bas           = $l_peserta['img_bas'];
                 $AObject->img_kartu_nama    = $l_peserta['img_kartu_nama'];
                 $AObject->img_kwitansi      = $l_peserta['img_kwitansi'];
+                $AObject->is_pembayaran_ok  = $l_peserta['is_pembayaran_ok'];
 
-                #$AObject->id = $l_peserta['id'];
             }
         }
 

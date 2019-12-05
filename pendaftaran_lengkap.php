@@ -44,6 +44,11 @@
         <div class="container_25">
             <div class="pendaftaran">        	
                 <div class="bawah">
+                    <?php
+                        if ($peserta->is_admin != '1' and $peserta->is_pembayaran_ok != '1'){
+                            include "info_pembayaran.php";
+                        }
+                    ?>
                     <div class="kanan">
                         <img src="<?php echo "data/" . $peserta->img_photo?>" height="472" width="100%">
                         
@@ -74,6 +79,7 @@
                                 <tr><td><a href="<?php echo "data/" . $peserta->img_kwitansi?>">Kwitansi Pembayaran</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
                             <?php } else { ?>
                                 <tr><td>Kwitansi Pembayaran</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
+                                <tr><td></td><td></td></tr>
                             <?php } ?>    
                         </table>
                     </div>

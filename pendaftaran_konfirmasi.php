@@ -39,7 +39,9 @@ $query = "update seminar_peserta set is_konfirmasi = 1,  tgl_konfirmasi = '$tgl_
                     $result = $db_akses->ExecuteQuery($query);
                     if ($result){
                         echo "Selamat, anda telah berhasil mengkonfirmasi pendaftaran seminar<br>";
-                        echo "Selanjutnya silahkan <a href='pendaftaran_login.php?id=". $id ."'>login</a> untuk  melengkapi data-data anda";
+                        echo "Selanjutnya silahkan <a href='pendaftaran_login.php?id=". $id ."'>login</a> untuk  melengkapi data-data anda<br/><br/>";
+
+                        include "info_pembayaran.php";
                     } else {
                         #echo "SQL : $query";
                     }

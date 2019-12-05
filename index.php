@@ -25,23 +25,25 @@ $page_name = 'pendaftaran';
 	<div class="container_25">
 	    <div class="pendaftaran">        	
             <div class="bawah">
-                <form action="pendaftaran_proses.php" method="post">
-                	<div class="area">
-                    	<input type="text" name="nama" class="input" placeholder=" Nama">
-                    </div>
-                    <div class="area">
-                    	<input type="email" name="email" class="input" placeholder=" Email">
-                    </div>
-                    <div class="area">
-                    	<input type="password" name="password" class="input" placeholder=" Password">
-                    </div>
-                    <div class="area">
-                    	<input type="password" name="konfirmasi_password" class="input" placeholder=" Konfirmasi Password">
-                    </div>
-                    <div class="area">
-                    	<input type="submit" class="submit" value="KIRIM">
-                    </div>
-                </form>
+                <div class="kiri">
+                    <form action="pendaftaran_proses.php" method="post">
+                        <div class="area">
+                            <input type="text" name="nama" class="input" placeholder=" Nama">
+                        </div>
+                        <div class="area">
+                            <input type="email" name="email" class="input" placeholder=" Email">
+                        </div>
+                        <div class="area">
+                            <input type="password" name="password" class="input" placeholder=" Password">
+                        </div>
+                        <div class="area">
+                            <input type="password" name="konfirmasi_password" class="input" placeholder=" Konfirmasi Password">
+                        </div>
+                        <div class="area">
+                            <input type="submit" class="submit" value="KIRIM">
+                        </div>
+                    </form>
+                </div>
             </div>	
         </div>    
     </div>
