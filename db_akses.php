@@ -57,9 +57,9 @@
                 $AObject->no_ktp            = $l_peserta['no_ktp'];
                 $AObject->no_sk_ppat        = $l_peserta['no_sk_ppat'];
 
-                $AObject->tanggal_sk_ppat   = $l_peserta['tanggal_sk_ppat'];
+                $AObject->tgl_sk_ppat       = $l_peserta['tgl_sk_ppat'];
                 $AObject->no_bas_ppat       = $l_peserta['no_bas_ppat'];
-                $AObject->tanggal_bas_ppat  = $l_peserta['tanggal_bas_ppat'];
+                $AObject->tgl_bas_ppat      = $l_peserta['tgl_bas_ppat'];
                 $AObject->no_wa             = $l_peserta['no_wa'];
                 $AObject->no_telp_kantor    = $l_peserta['no_telp_kantor'];
 

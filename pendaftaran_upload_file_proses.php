@@ -55,13 +55,34 @@
 
 					if($db_akses->SaveToDB($peserta)){
 						if($_POST['jenis_dokumen'] == 'img_kwitansi'){
+                            $isi_email  = '';												
+                            $isi_email .= "$nama Telah melakukan konfirmasi pembayaran<br/>";
+                            $isi_email .= "Silahkan klik url dibawah ini untuk konfirmasi update pembayaran a.n. $nama <br>";
+                            $isi_email .= "https://pengwilippatjateng.org/pendaftaran/pendaftaran_konfirmasi_pembayaran.php?id=$peserta->id";
+
+                            #echo $isi_email;
+
+                            $topik_email="Silahkan Update Status Pembayaran Peserta Seminar";
+                            $nama_penerima=$nama;
+                            $email_dari="ippat.jateng@pengwilippatjateng.org";
+                            $email_dari_nama = "Panitia Seminar IPPAT Jawa Tengah";
+                            $email_tujuan="bagusprasojo@gmail.com";
+                            $email_cc="bagusprasojo@gmail.com";
+                            include 'mail-smtp.php';
                                 
+                            if(!$mail->Send())
+                            {
+                            echo "Gagal mengirim data ke email, Silahkan ulangi kembali <p>";
+                            echo "Mailer Error: " . $mail->ErrorInfo;                            
+                            exit;
+                            } else {            										
+                                exit("<script>window.alert('Berhasil menyimpan data pendaftaran, silahkan cek email anda untuk melakukan konfirmasi');
+                                window.location='index.php';</script>");
+                            }    
                         } else {                        
                             exit("<script>window.alert('Berhasil Upload Dokumen');
                             window.location='pendaftaran_upload_file.php';</script>");
-                        }
-
-                        
+                        }                        
 					}else{
 						exit("<script>window.alert('Gagal Upload Dokumen');
                             document.location.href='javascript:history.go(-1)';</script>");

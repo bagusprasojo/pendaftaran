@@ -48,7 +48,7 @@ if ($nama=='' or $email=='' or $password=='' or $konfirmasi_password=='')
                 $isi_email .= "Silahkan klik url dibawah ini untuk konfirmasi pendaftaran anda : <br>";
                 $isi_email .= "https://pengwilippatjateng.org/pendaftaran/pendaftaran_konfirmasi.php?id=$peserta->id";
 
-                echo $isi_email;
+                #echo $isi_email;
 
                 $topik_email="Konfirmasi Pendaftaran Online IPPAT Jawa Tengah";
                 $nama_penerima=$nama;

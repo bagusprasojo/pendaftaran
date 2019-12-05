@@ -39,7 +39,19 @@ $page_name = 'pendaftaran';
                 $r5 = $db_akses->OpenQuery($q5);
                 echo '<P>
                 <h1>Daftar Peserta</h1>
-                <table border = 1 class="flyer" cellpadding="20" cellspacing="0" align="left" width="100%"><tr><th>Nama</th><th>Email</th><th>Administrator</th><th>Tanggal Input</th><th>Operasi</th>';
+                <table border = 1 class="flyer" cellpadding="20" cellspacing="0" align="left" width="100%">
+                <tr>
+                    <th>Nama <br>Email</th>                    
+                    <th>Tempat <br>Tgl Lahir</th>
+                    <th>Alamat</th>
+                    <th>No KTP</th>
+                    <th>No & <br>Tanggal SK PPAT</th>
+                    
+                    <th>No & <br/>Tanggal BAS PPAT</th>
+                    <th>No WA & Telp Kantor</th>
+                    <th>Administrator</th>
+                    <th>Operasi</th>
+                </tr>';
 
                 while ($row = mysqli_fetch_array ($r5, MYSQLI_ASSOC)) {
                     if ($row['is_admin'] == 1) {
@@ -52,10 +64,15 @@ $page_name = 'pendaftaran';
                         $status_admin = '1';
                     }
 
-                    echo '<tr><td align="left">'.$row['nama'].'</td>
-                          <td align="left">'.$row['email'].'</td>
+                    echo '<tr>
+                          <td align="left">'.$row['nama'].'<br>' .$row['email']. '</td>                          
+                          <td align="left">'.$row['tempat_lahir'].'<br/>'.$row['tgl_lahir'].'</td>
+                          <td align="left">'.$row['alamat_rumah'].'</td>
+                          <td align="left">'.$row['no_ktp'].'</td>
+                          <td align="left">'.$row['no_sk_ppat'].'<br/>'.$row['tgl_sk_ppat'].'</td>
+                          <td align="left">'.$row['no_bas_ppat'].'<br>'.$row['tgl_bas_ppat'].'</td>
+                          <td align="left">'.$row['no_wa'].'<br>'.$row['no_telp_kantor'].'</td>
                           <td align="left">'.$is_admin.'</td>
-                          <td align="left">'.$row['tgl_input'].'</td>
                           <td align="left">
                           <a href="pendaftaran_konfirmasi.php?id='.$row['id'].'">Konfirmasi</a> |
                           <a href="pendaftaran_delete.php?id='.$row['id'].'">Hapus</a> |

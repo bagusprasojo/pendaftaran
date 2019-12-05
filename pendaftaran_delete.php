@@ -1,5 +1,5 @@
 <?php
-include "../config/config.php";
+include "dbconfig.php";
 $page_name = 'pendaftaran';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,7 +22,7 @@ $page_name = 'pendaftaran';
 
 <?php
 date_default_timezone_set('Asia/jakarta');
-$id=mysqli_real_escape_string($link,$_GET['id']);
+$id = $db_akses->mysqli_real_escape_string($_GET['id']);
 $tgl_konfirmasi= date("Y-m-d H:i:s");
 
 $query = "delete from seminar_peserta where id = '$id'";   
@@ -33,7 +33,7 @@ $query = "delete from seminar_peserta where id = '$id'";
 	    <div class="pendaftaran">        	
             <div class="bawah">
                 <?php
-                    $result = mysqli_query($link,$query);
+                    $result = $db_akses->ExecuteQuery($query);
                     if ($result){
                         echo "Berhasil menghapus data<br>";
                         echo "Kembali ke halaman <a href='pendaftaran_list.php'>daftar peserta</a>";

@@ -43,9 +43,9 @@ class peserta implements DAO{
     public $alamat_rumah;
     public $no_ktp;
     public $no_sk_ppat;
-	public $tanggal_sk_ppat;
+	public $tgl_sk_ppat;
 	public $no_bas_ppat;
-	public $tanggal_bas_ppat;
+	public $tgl_bas_ppat;
 	public $no_wa;
     public $no_telp_kantor;    
     public $img_photo;
@@ -61,8 +61,8 @@ class peserta implements DAO{
     public function generateSQLInsert() {
         $this->id = gen_uuid();
 
-        $sSQL = "insert into   $this->tablename  (id        ,    nama     ,    email     ,    tgl_input     , is_konfirmasi,    tgl_konfirmasi     ,    passw     ,    is_admin     ,    tempat_lahir     ,    tgl_lahir     , alamat_rumah         , no_ktp		, no_sk_ppat		, tanggal_sk_ppat			, no_bas_ppat			, tanggal_bas_ppat			, no_wa			, no_telp_kantor)";
-        $sSQL = $sSQL .                 " values('$this->id','$this->nama','$this->email','$this->tgl_input',0             ,'$this->tgl_konfirmasi','$this->passw','$this->is_admin','$this->tempat_lahir','$this->tgl_lahir','$this->alamat_rumah' ,'$this->no_ktp','$this->no_sk_ppat','$this->tanggal_sk_ppat'	,'$this->no_bas_ppat'	,'$this->tanggal_bas_ppat'	,'$this->no_wa'	,'$this->no_telp_kantor'";
+        $sSQL = "insert into   $this->tablename  (id        ,    nama     ,    email     ,    tgl_input     , is_konfirmasi,    tgl_konfirmasi     ,    passw     ,    is_admin     ,    tempat_lahir     ,    tgl_lahir     , alamat_rumah         , no_ktp		, no_sk_ppat		, tgl_sk_ppat			, no_bas_ppat			, tgl_bas_ppat			, no_wa			, no_telp_kantor)";
+        $sSQL = $sSQL .                 " values('$this->id','$this->nama','$this->email','$this->tgl_input',0             ,'$this->tgl_konfirmasi','$this->passw','$this->is_admin','$this->tempat_lahir','$this->tgl_lahir','$this->alamat_rumah' ,'$this->no_ktp','$this->no_sk_ppat','$this->tgl_sk_ppat'	,'$this->no_bas_ppat'	,'$this->tgl_bas_ppat'	,'$this->no_wa'	,'$this->no_telp_kantor'";
         $sSQL = $sSQL . ")";
 
         return $sSQL;
@@ -75,9 +75,9 @@ class peserta implements DAO{
         $sSQL = $sSQL . " , alamat_rumah = '" . $this->alamat_rumah . "'";
         $sSQL = $sSQL . " , no_ktp = '" . $this->no_ktp . "'";
         $sSQL = $sSQL . " , no_sk_ppat = '" . $this->no_sk_ppat . "'";		
-		$sSQL = $sSQL . " , tanggal_sk_ppat = '" . $this->tanggal_sk_ppat . "'";
+		$sSQL = $sSQL . " , tgl_sk_ppat = '" . $this->tgl_sk_ppat . "'";
 		$sSQL = $sSQL . " , no_bas_ppat = '" . $this->no_bas_ppat . "'";
-		$sSQL = $sSQL . " , tanggal_bas_ppat = '" . $this->tanggal_bas_ppat . "'";
+		$sSQL = $sSQL . " , tgl_bas_ppat = '" . $this->tgl_bas_ppat . "'";
 		$sSQL = $sSQL . " , no_wa = '" . $this->no_wa . "'";
         $sSQL = $sSQL . " , no_telp_kantor = '" . $this->no_telp_kantor . "'";
         

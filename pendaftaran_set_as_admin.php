@@ -1,5 +1,5 @@
 <?php
-include "../config/config.php";
+include "dbconfig.php";
 $page_name = 'pendaftaran';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,8 +22,8 @@ $page_name = 'pendaftaran';
 
 <?php
 date_default_timezone_set('Asia/jakarta');
-$id=mysqli_real_escape_string($link,$_GET['id']);
-$status_admin=mysqli_real_escape_string($link,$_GET['status_admin']);
+$id = $db_akses->mysqli_real_escape_string($_GET['id']);
+$status_admin = $db_akses->mysqli_real_escape_string($_GET['status_admin']);
 
 $tgl_konfirmasi= date("Y-m-d H:i:s");
 
@@ -38,7 +38,7 @@ echo "SQL : $query";
 	    <div class="pendaftaran">        	
             <div class="bawah">
                 <?php
-                    $result = mysqli_query($link,$query);
+                    $result = $db_akses->ExecuteQuery($query);
                     if ($result){
                         
                         echo "Selamat, anda telah berhasil merubah status admin<br>";
