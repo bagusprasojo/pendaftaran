@@ -25,18 +25,18 @@ if ($time) {
     document.location.href='javascript:history.go(-1)';</script>");
 }
 
-$time = strtotime($_POST['tanggal_sk_ppat']);
+$time = strtotime($_POST['tgl_sk_ppat']);
 if ($time) {
-  $tanggal_sk_ppat = date('Y-m-d', $time);  
+  $tgl_sk_ppat = date('Y-m-d', $time);  
 } else {
     exit("<script>window.alert('Tanggal SK PPAT Masih Salah');
     document.location.href='javascript:history.go(-1)';</script>");
 }
 
 
-$time = strtotime($_POST['tanggal_bas_ppat']);
+$time = strtotime($_POST['tgl_bas_ppat']);
 if ($time) {
-  $tanggal_bas_ppat = date('Y-m-d', $time);  
+  $tgl_bas_ppat = date('Y-m-d', $time);  
 } else {
     exit("<script>window.alert('Tanggal Berita Acara Sumpah Masih Salah');
     document.location.href='javascript:history.go(-1)';</script>");
@@ -59,10 +59,10 @@ if ($nama == '' or $tempat_lahir == '' or $tgl_lahir == '')
     $peserta->alamat_rumah      = $alamat_rumah;
     $peserta->no_ktp            = $no_ktp;
     $peserta->no_sk_ppat        = $no_sk_ppat;
-    $peserta->tanggal_sk_ppat   = $tanggal_sk_ppat;
+    $peserta->tgl_sk_ppat       = $tgl_sk_ppat;
 
     $peserta->no_bas_ppat       = $no_bas_ppat;
-    $peserta->tanggal_bas_ppat  = $tanggal_bas_ppat;
+    $peserta->tgl_bas_ppat  = $tgl_bas_ppat;
     $peserta->no_wa             = $no_wa;
     $peserta->no_telp_kantor    = $no_telp_kantor;    
 

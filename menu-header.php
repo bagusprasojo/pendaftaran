@@ -20,7 +20,7 @@
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=0'><span>Upload File Pendaftaran</span></a></li>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=1'><span>Konfirmasi Pembayaran</span></a></li>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='#'><span>Cetak Kartu Peserta</span></a></li>
-                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='#'><span>Download Materi</span></a></li>
+                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_module.php'><span>Download Materi</span></a></li>
                             </ul>
                         </li>
                         
@@ -74,7 +74,7 @@
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=0'><span>Upload File Pendaftaran</span></a></li>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=1'><span>Konfirmasi Pembayaran</span></a></li>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='#'><span>Cetak Kartu Peserta</span></a></li>
-                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='#'><span>Download Materi</span></a></li>
+                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_module.php'><span>Download Materi</span></a></li>
                             </ul>
                         </li>
                         

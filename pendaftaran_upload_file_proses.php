@@ -38,6 +38,8 @@
                     $db_akses->LoadByID($peserta);
 
                     move_uploaded_file($file_tmp, 'data/'.$nama);
+
+                    $jenisbayar=0;
                     
                     if ($_POST['jenis_dokumen'] == 'img_photo'){
                         $peserta->img_photo = $nama;
@@ -51,6 +53,7 @@
                         $peserta->img_kartu_nama = $nama;
                     } elseif($_POST['jenis_dokumen'] == 'img_kwitansi'){
                         $peserta->img_kwitansi = $nama;
+                        $jenisbayar=1;
                     } 
 
 					if($db_akses->SaveToDB($peserta)){
@@ -76,12 +79,12 @@
                             echo "Mailer Error: " . $mail->ErrorInfo;                            
                             exit;
                             } else {            										
-                                exit("<script>window.alert('Berhasil menyimpan data pendaftaran, silahkan cek email anda untuk melakukan konfirmasi');
-                                window.location='index.php';</script>");
+                                exit("<script>window.alert('Berhasil menyimpan data konfirmasi pembayaran, Silahkan cek Email Anda');
+                                window.location='pendaftaran_upload_file.php?bayar=1';</script>");
                             }    
                         } else {                        
                             exit("<script>window.alert('Berhasil Upload Dokumen');
-                            window.location='pendaftaran_upload_file.php';</script>");
+                            window.location='pendaftaran_upload_file.php?bayar=$jenisbayar';</script>");
                         }                        
 					}else{
 						exit("<script>window.alert('Gagal Upload Dokumen');

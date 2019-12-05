@@ -117,7 +117,7 @@
                             
                             <div class="area">                            
                                 Tanggal SK PPAT :<br>
-                                <input type="date"  value="<?php echo $peserta->tanggal_sk_ppat?>" name="tanggal_sk_ppat" class="input" >
+                                <input type="date"  value="<?php echo $peserta->tgl_sk_ppat?>" name="tgl_sk_ppat" class="input" >
                             </div>
                             
                             <div class="area">                            
@@ -127,7 +127,7 @@
                             
                             <div class="area">                            
                                 Tanggal Berita Acara Sumpah PPAT :<br>
-                                <input type="date" value="<?php echo $peserta->tanggal_bas_ppat?>" name="tanggal_bas_ppat" class="input" >
+                                <input type="date" value="<?php echo $peserta->tgl_bas_ppat?>" name="tgl_bas_ppat" class="input" >
                             </div>                       
 
                             <div class="area">                            

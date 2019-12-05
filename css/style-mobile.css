@@ -1625,4 +1625,239 @@ nav:not(.mm-menu){
 	font-size:12px;
 	color:#000;
 }
+
+.pendaftaran{
+	float:left;
+	width:100%;
+	overflow:hidden;
+}
+.pendaftaran .judul{
+	float:left;
+	width:100%;
+	overflow:hidden;
+	font-family: 'open_sansbold';
+	color:#000;
+	font-size:16px;
+}
+.pendaftaran .cari{
+	width:100%;
+	float:left;
+	margin-bottom:20px;
+}
+.pendaftaran .cari .input{
+	width:223px;
+	float:right;
+	height:41px;
+	border:none;
+	padding-left:8px;
+	background:#EEE;
+	font-family: 'GothamBook';
+	color:#888888;
+	font-size:15px;
+}
+.pendaftaran .cari .submit{
+	width:45px;
+	float:right;
+	height:41px;
+	border:none;
+	background:url(../images/cari.png) no-repeat center #000;
+	-webkit-transition: background-color 0.5s, color 0.5s;
+  	transition: background-color 0.5s, color 0.5s;
+}
+.pendaftaran .cari .submit:hover{
+	background:url(../images/cari.png) no-repeat center #095144;
+}
+.pendaftaran .box{
+	float:left;
+	width:49%;
+	height:70px;
+	margin:0.5%;
+	background:#d6f2ee;
+	overflow:hidden;
+}
+.pendaftaran .box .pic{
+	display:none;
+}
+.pendaftaran .box .list{
+	float:left;
+	width:100%;
+	overflow:hidden;
+	font-family: 'open_sansbold';
+	color:#000;
+	text-align:center;
+	font-size:14px;
+	margin-top:20px;
+}
+.pendaftaran .sort{
+	float:left;
+	padding:10px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border:1px solid #a9a9a9;
+	font-size:15px;
+	overflow:hidden;
+	font-family: 'GothamBold';
+}
+:root .css3-metro-dropdown option,
+:root .css3-metro-dropdown:after,
+:root .css3-metro-dropdown::after,
+:root .css3-metro-dropdown select
+{
+    color: #444;
+	cursor:pointer;
+}
+ 
+:root .css3-metro-dropdown select,
+:root .css3-metro-dropdown:after,
+:root .css3-metro-dropdown::after
+{
+    display: block;
+    background: #FFF;
+	color:#444;
+}
+ 
+:root .css3-metro-dropdown select,
+:root .css3-metro-dropdown option
+{
+    padding: 5px;
+	padding-right:30px;
+	color:#444;
+}
+ 
+:root .css3-metro-dropdown
+{
+    position: relative;
+	margin-right:0px;
+    display: inline-block;
+    border:1px solid #00923f;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+ 
+:root .css3-metro-dropdown::after
+{
+    content: "\25bc";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 25px;
+    font-size: 10px;
+    line-height: 39px;
+    text-align: center;
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+}
+ 
+:root .css3-metro-dropdown select
+{
+   height: 39px;
+   border: 0;
+   vertical-align: middle;
+   font-family: 'GothamMedium';
+   font-size:15px;
+   outline: 0 none;
+}
+ 
+:root .css3-metro-dropdown option
+{
+    background: #00923f;
+    color: #FFF;
+	cursor:pointer;
+}
+ 
+/* more colors */ 
+:root .css3-metro-dropdown-color-ff2e12 select
+{
+    background: #00923f;
+	color:#FFF;
+}
+:root .css3-metro-dropdown-color-ff2e12:after
+{
+     background: #00923f;
+	color:#FFF;
+}
+:root .css3-metro-dropdown-color-ff2e12::after
+{
+     background: #00923f;
+	color:#FFF;
+}
+
+.pendaftaran .area{
+	float:left;
+	overflow:hidden;
+	width:100%;
+	margin-top:20px;
+}
+.pendaftaran .area .box-peo{
+	float:left;
+	overflow:hidden;
+	width:97%;
+	margin:1.5%;
+	margin-bottom:20px;
+}
+.pendaftaran .area .box-peo .atas{
+	float:left;
+	width:100%;
+	height:85px;
+	position:relative;
+	background:#d6f2ee;
+}
+.pendaftaran .area .box-peo .bawah{
+	float:left;
+	width:90%;
+	padding-left:5%;
+	padding-right:5%;
+	padding-bottom:20px;
+	margin-top:8px;
+	background:#FFF;
+	position:relative;
+	-webkit-box-shadow: inset 0px 0px 0px 1px #d6f2ee;
+	-moz-box-shadow: inset 0px 0px 0px 1px #d6f2ee;
+	box-shadow: inset 0px 0px 0px 1px #d6f2ee;
+}
+.pendaftaran .area .box-peo .bawah .pic{
+	margin:0 auto;
+	width:130px;
+	height:130px;
+	background:#FFF;
+	border-radius:50%;
+	border:10px solid #d6f2ee;
+	overflow:hidden;
+	margin-top:-35%;
+	margin-bottom:20px;
+}
+.pendaftaran .area .box-peo .bawah .pic img{
+	width:100%;
+}
+.pendaftaran .area .box-peo .bawah .nama{
+	float:left;
+	width:100%;
+	text-align:center;
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;
+	color:#df815b;
+	font-weight:bold;
+}
+.pendaftaran .area .box-peo .bawah .jabatan{
+	float:left;
+	width:100%;
+	text-align:center;
+	color:#000;
+	font-family: 'GothamBold';
+	font-size:16px;
+	color:#707070;
+	margin-top:5px;
+}
+.pendaftaran .area .box-peo .bawah .wilayah{
+	float:left;
+	width:100%;
+	text-align:center;
+	color:#000;
+	font-family: 'GothamBook';
+	font-size:16px;
+	color:#707070;
+	margin-top:5px;
+}
 }
