@@ -1,0 +1,61 @@
+.view {
+   	width:311px;
+	height:311px;
+   	float: left;
+   	overflow: hidden;
+   	position: relative;
+   	text-align: center;
+   	background:rgba(16, 18, 34, 0.8);
+   	cursor: default;
+}
+.view .mask,.view .content {
+   	width:311px;
+	height:311px;
+   	position: absolute;
+   	overflow: hidden;
+   	top: 0;
+   	left: 0;
+}
+.view img {
+   display: block;
+   position: relative;
+}
+.view h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 25px;
+   border-top:1px solid #FFF;
+   border-bottom:1px solid #FFF;
+   padding: 10px;
+   width:220px;
+   overflow:hidden;
+   font-family: 'AauxProMedium';
+   margin:0 auto;
+   margin-top:40px;
+   margin-bottom:30px;
+}
+.view p {
+   font-family: 'AauxProMedium';
+   font-size: 14px;
+   position: relative;
+   color: #fff;
+   width:220px;
+   overflow:hidden;
+   margin:0 auto;
+   margin-bottom:40px;
+   text-align: center;
+}
+.view a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: #fdfdfd;
+   color: #000;
+   font-family: 'AauxProMedium';
+   font-size:12px;
+}
+.view a.info: hover {
+   background:rgba(16, 18, 34, 0.8);
+}

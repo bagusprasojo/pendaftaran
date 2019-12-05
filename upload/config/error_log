@@ -1,0 +1,1 @@
+[06-Jun-2018 19:23:02 Asia/jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/pengwili/public_html/upload/config/config_db.php on line 44

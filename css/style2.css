@@ -1,0 +1,359 @@
+.view-first img {
+   -webkit-transition: all 0.2s linear;
+   -moz-transition: all 0.2s linear;
+   -o-transition: all 0.2s linear;
+   -ms-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+}
+.view-first .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=1);
+   opacity: 1;
+   background-color: rgba(64,66,66, 0.7);
+   -webkit-transition: all 0.4s ease-in-out;
+   -moz-transition: all 0.4s ease-in-out;
+   -o-transition: all 0.4s ease-in-out;
+   -ms-transition: all 0.4s ease-in-out;
+   transition: all 0.4s ease-in-out;
+}
+.view-first h2 {
+   -webkit-transform: translateY(-100px);
+   -moz-transform: translateY(-100px);
+   -o-transform: translateY(-100px);
+   -ms-transform: translateY(-100px);
+   transform: translateY(-100px);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+}
+.view-first p {
+   -webkit-transform: translateY(100px);
+   -moz-transform: translateY(100px);
+   -o-transform: translateY(100px);
+   -ms-transform: translateY(100px);
+   transform: translateY(100px);
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s linear;
+   -moz-transition: all 0.2s linear;
+   -o-transition: all 0.2s linear;
+   -ms-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+}
+.view-first:hover img {
+   -webkit-transform: scale(1.1,1.1);
+   -moz-transform: scale(1.1,1.1);
+   -o-transform: scale(1.1,1.1);
+   -ms-transform: scale(1.1,1.1);
+   transform: scale(1.1,1.1);
+}
+.view-first a.info {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+   -webkit-transition: all 0.2s ease-in-out;
+   -moz-transition: all 0.2s ease-in-out;
+   -o-transition: all 0.2s ease-in-out;
+   -ms-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+}
+.view-first:hover .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=0);
+   opacity: 0;
+}
+.view-first:hover h2,
+.view-first:hover p,
+.view-first:hover a.info {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 1;
+   -webkit-transform: translateY(0px);
+   -moz-transform: translateY(0px);
+   -o-transform: translateY(0px);
+   -ms-transform: translateY(0px);
+   transform: translateY(0px);
+}
+.view-first:hover p {
+   -webkit-transition-delay: 0.1s;
+   -moz-transition-delay: 0.1s;
+   -o-transition-delay: 0.1s;
+   -ms-transition-delay: 0.1s;
+   transition-delay: 0.1s;
+}
+.view-first:hover a.info {
+   -webkit-transition-delay: 0.2s;
+   -moz-transition-delay: 0.2s;
+   -o-transition-delay: 0.2s;
+   -ms-transition-delay: 0.2s;
+   transition-delay: 0.2s;
+}
+	
+
+
+
+@media screen and (min-width:1200px) {
+.view-dua {
+   	width:530px;
+	height:281px;
+   	float: left;
+	margin-right:10px;
+	margin-bottom:10px;
+   	overflow: hidden;
+   	position: relative;
+   	text-align: center;
+   	-webkit-box-shadow: 1px 1px 2px #e6e6e6;
+   	-moz-box-shadow: 1px 1px 2px #e6e6e6;
+   	box-shadow: 1px 1px 2px #e6e6e6;
+   	cursor: default;
+	cursor:pointer;
+   	background: #fff url(../images/bgimg.jpg) no-repeat center center;
+}
+.view-dua .mask,.view-dua .content {
+   	width:541px;
+	height:281px;
+   	position: absolute;
+   	overflow: hidden;
+   	top: 0;
+   	left: 0;
+}
+.view-dua img {
+   display: block;
+   width:541px;
+   position: relative;
+}
+.view-dua h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 48px;
+   padding: 10px;
+   font-family: 'CenturyGothic';
+   margin: 100px 0 0 0;
+}
+.view-dua p {
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 12px;
+   position: relative;
+   color: #fff;
+   padding: 10px 20px 20px;
+   text-align: center;
+}
+.view-dua a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: #dadcd1;
+   color: #3d3d3d;
+   font-family: 'CenturyGothic';
+   font-size:18px;
+   text-transform: uppercase;
+}
+.view-dua a.info: hover {
+   -webkit-box-shadow: 0 0 5px #000;
+   -moz-box-shadow: 0 0 5px #000;
+   box-shadow: 0 0 5px #000;
+}	
+
+.view-satu {
+   	width:260px;
+	height:477px;
+   	float: left;
+	margin-right:10px;
+	margin-bottom:10px;
+   	overflow: hidden;
+   	position: relative;
+   	text-align: center;
+   	-webkit-box-shadow: 1px 1px 2px #e6e6e6;
+   	-moz-box-shadow: 1px 1px 2px #e6e6e6;
+   	box-shadow: 1px 1px 2px #e6e6e6;
+   	cursor: default;
+	cursor:pointer;
+   	background: #fff url(../images/bgimg.jpg) no-repeat center center;
+}
+.view-satu .mask,.view-satu .content {
+   	width:260px;
+	height:477px;
+   	position: absolute;
+   	overflow: hidden;
+   	top: 0;
+   	left: 0;
+}
+.view-satu img {
+   height:477px;
+   position: relative;
+}
+.view-satu h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 48px;
+   padding: 10px;
+   font-family: 'CenturyGothic';
+   margin: 100px 0 0 0;
+}
+.view-satu p {
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 12px;
+   position: relative;
+   color: #fff;
+   padding: 10px 20px 20px;
+   text-align: center;
+}
+.view-satu a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: #dadcd1;
+   color: #3d3d3d;
+   font-family: 'CenturyGothic';
+   font-size:18px;
+   text-transform: uppercase;
+}
+.view-satu a.info: hover {
+   -webkit-box-shadow: 0 0 5px #000;
+   -moz-box-shadow: 0 0 5px #000;
+   box-shadow: 0 0 5px #000;
+}				
+}
+
+
+
+@media screen and (max-width:1199px) {
+.view-satu {
+   	width:100%;
+	max-width:140px;
+   	float: left;
+	margin-right:10px;
+	margin-bottom:10px;
+   	overflow: hidden;
+   	position: relative;
+   	text-align: center;
+   	-webkit-box-shadow: 1px 1px 2px #e6e6e6;
+   	-moz-box-shadow: 1px 1px 2px #e6e6e6;
+   	box-shadow: 1px 1px 2px #e6e6e6;
+   	cursor: default;
+	cursor:pointer;
+   	background: #fff url(../images/bgimg.jpg) no-repeat center center;
+}
+.view-satu .mask,.view-satu .content {
+   	width:100%;
+	height:100%;
+   	position: absolute;
+   	overflow: hidden;
+   	top: 0;
+   	left: 0;
+}
+.view-satu img {
+   width:100%;
+   position: relative;
+}
+.view-satu h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 48px;
+   padding: 10px;
+   font-family: 'CenturyGothic';
+   margin: 100px 0 0 0;
+}
+.view-satu p {
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 12px;
+   position: relative;
+   color: #fff;
+   padding: 10px 20px 20px;
+   text-align: center;
+}
+.view-satu a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: #dadcd1;
+   color: #3d3d3d;
+   font-family: 'CenturyGothic';
+   font-size:18px;
+   text-transform: uppercase;
+}
+.view-satu a.info: hover {
+   -webkit-box-shadow: 0 0 5px #000;
+   -moz-box-shadow: 0 0 5px #000;
+   box-shadow: 0 0 5px #000;
+}	
+	
+.view-dua {
+   	width:100%;
+	max-width:300px;
+   	float: left;
+	margin-right:10px;
+	margin-bottom:10px;
+   	overflow: hidden;
+   	position: relative;
+   	text-align: center;
+   	-webkit-box-shadow: 1px 1px 2px #e6e6e6;
+   	-moz-box-shadow: 1px 1px 2px #e6e6e6;
+   	box-shadow: 1px 1px 2px #e6e6e6;
+   	cursor: default;
+	cursor:pointer;
+   	background: #fff url(../images/bgimg.jpg) no-repeat center center;
+}
+.view-dua .mask,.view-dua .content {
+   	width:100%;
+	height:100%;
+   	position: absolute;
+   	overflow: hidden;
+   	top: 0;
+   	left: 0;
+}
+.view-dua img {
+   display: block;
+   width:100%;
+   position: relative;
+}
+.view-dua h2 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   font-size: 48px;
+   padding: 10px;
+   font-family: 'CenturyGothic';
+   margin: 100px 0 0 0;
+}
+.view-dua p {
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 12px;
+   position: relative;
+   color: #fff;
+   padding: 10px 20px 20px;
+   text-align: center;
+}
+.view-dua a.info {
+   display: inline-block;
+   text-decoration: none;
+   padding: 7px 14px;
+   background: #dadcd1;
+   color: #3d3d3d;
+   font-family: 'CenturyGothic';
+   font-size:18px;
+   text-transform: uppercase;
+}
+.view-dua a.info: hover {
+   -webkit-box-shadow: 0 0 5px #000;
+   -moz-box-shadow: 0 0 5px #000;
+   box-shadow: 0 0 5px #000;
+}				
+}

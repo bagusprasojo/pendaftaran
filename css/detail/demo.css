@@ -1,0 +1,18 @@
+@import url('../reset.css');
+h1{
+	font-size:20px;
+	float:left;
+	color:#fff;
+	font-family:Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 640px) {
+	.header a{
+		display:block;
+		text-align:center;
+		font-size:10px;
+		text-shadow:none;
+	}
+	.header span.right_ab{
+		float:none;
+	}
+}
