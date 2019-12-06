@@ -1689,6 +1689,36 @@ body{
 	color:#464646;
 }
 
+.pendaftaran .bawah table{
+	font-family: sans-serif;
+    color: #444;
+    border-collapse: collapse;
+    width: 50%;
+    border: 1px solid #f2f5f7;
+}
+
+.pendaftaran .bawah table tr th{
+    background: #35A9DB;
+    color: #fff;
+	font-weight: normal;
+	font-size:16px;
+	text-align: center;
+}
+ 
+.pendaftaran .bawah table, th, td {
+    padding: 8px 20px;
+    text-align: left;
+}
+ 
+.pendaftaran .bawah table tr:hover {
+    background-color: #f5f5f5;
+}
+ 
+.pendaftaran .bawah table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
 .pendaftaran .bawah .kanan{
 	float:right;
 	width:32%;
@@ -1711,6 +1741,9 @@ body{
 	box-shadow: inset 0px 0px 0px 1px rgba(221,221,221,1);
 	border:none;
 }
+
+
+
 .pendaftaran .bawah .kiri form{
 	float:left;
 	width:100%;
@@ -2026,6 +2059,33 @@ body{
   color: #000;
   -webkit-transition: background-color 0.5s, color 0.5s;
   transition: background-color 0.5s, color 0.5s;
+}
+
+.table1 {
+    font-family: sans-serif;
+    color: #444;
+    border-collapse: collapse;
+    width: 50%;
+    border: 1px solid #f2f5f7;
+}
+ 
+.table1 tr th{
+    background: #35A9DB;
+    color: #fff;
+    font-weight: normal;
+}
+ 
+.table1, th, td {
+    padding: 8px 20px;
+    text-align: center;
+}
+ 
+.table1 tr:hover {
+    background-color: #f5f5f5;
+}
+ 
+.table1 tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 }
 

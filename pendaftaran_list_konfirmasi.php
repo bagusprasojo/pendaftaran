@@ -40,7 +40,7 @@ $page_name = 'pendaftaran';
                     $r5 = $db_akses->OpenQuery($sSQL);
                     
                     $iNomor = 0;
-                    echo "<table border = 1 ><tr><td>No</td><td>Email<br/>Nama</td><td>Kwitansi</td><td>Aksi</td></tr>";
+                    echo "<table border = 1 ><tr><th>No</th><th>Email<br/>Nama</th><th>Kwitansi</th><th>Aksi</th></tr>";
                     while ($row = mysqli_fetch_array($r5, MYSQLI_ASSOC)) {                    
                         $iNomor = $iNomor + 1;
                         echo "<tr>";
@@ -72,7 +72,7 @@ $page_name = 'pendaftaran';
                     $r5 = $db_akses->OpenQuery($sSQL);
                     
                     $iNomor = 0;
-                    echo "<table border = 1 ><tr><td>No</td><td>Email<br/>Nama</td><td>Kwitansi</td><td>Aksi</td></tr>";
+                    echo "<table border = 1 ><tr><th>No</th><th>Email<br/>Nama</th><th>Kwitansi</th><th>Aksi</th></tr>";
                     while ($row = mysqli_fetch_array($r5, MYSQLI_ASSOC)) {                    
                         $iNomor = $iNomor + 1;
                         echo "<tr>";
