@@ -1,0 +1,9 @@
+TODO :
+1. Tambahkan menu untuk konfirmasi pembayaran
+2. Tambahkan halaman untuk cek status konfirmasi pembayaran
+3. 
+4. Tambahkan informasi Kota, Propinsi
+5. Tambahkan filter data per jenis inputan di pendaftaran lengkap
+
+DONE :
+- Tambahkan index.htm untuk tiap folder

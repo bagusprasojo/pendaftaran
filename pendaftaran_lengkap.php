@@ -34,11 +34,7 @@
 
     $db_akses = new db_akses();
     $db_akses->LoadByID($peserta);
-    #echo 'Nama' . $peserta->nama;
-    #Exit;
-
-    #$sql = "SELECT * FROM seminar_peserta WHERE is_konfirmasi = 1 and id = '".$_SESSION['id'] . "'";
-    #$l_peserta = mysqli_fetch_array(mysqli_query($link,$sql));
+        
 ?>
     <div class="konten">
         <div class="container_25">

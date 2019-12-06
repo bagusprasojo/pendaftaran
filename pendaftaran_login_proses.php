@@ -24,6 +24,9 @@ if ($email=='' or $password=='' )
     } 
     else 
     {   $l_login = $db_akses->OpenQueryArray("SELECT * FROM seminar_peserta WHERE is_konfirmasi = 1 and email = '$email'");
+        #echo $l_login['passw'] ." vs ". md5($password) . " vs " . $password;
+        #exit;
+
         if ($l_login['passw'] != md5($password)){
             exit("<script>window.alert('Login Gagal, Coba Lagi !');
             document.location.href='javascript:history.go(-1)';</script>");

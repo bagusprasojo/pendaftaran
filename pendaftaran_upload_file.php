@@ -42,12 +42,18 @@
                     ?>
 
                 <div class="kiri">
-                    <form action="pendaftaran_upload_file_proses.php" method="post" enctype="multipart/form-data">
+                    <?php
+                        $bayar = $db_akses->mysqli_real_escape_string($_GET['bayar']); 
+                        $FileProsesUpload = "pendaftaran_upload_file_proses.php";
+                        if ($bayar == '2'){
+                            $FileProsesUpload = "pendaftaran_upload_file_module_proses.php";
+                        }
+                    ?>
+                    <form action="<?php echo $FileProsesUpload?>" method="post" enctype="multipart/form-data">
                         Jenis Dokumen : <br>
                         <div class="area">                            
                             <select class="input" name="jenis_dokumen">
-                                <?php
-                                    $bayar = $db_akses->mysqli_real_escape_string($_GET['bayar']);
+                                <?php                                    
                                     if ($bayar == '0') {
                                 ?>
                                     <option value="img_photo">Pas Photo</option>
@@ -61,7 +67,13 @@
                                     <option value="img_kwitansi">Kwitansi Pembayaran</option>
 
                                 <?php
-                                    }                                        
+                                    } elseif ($bayar == '2' and $peserta->is_admin == '1'){
+                                        ?>
+                                            <option value="img_module">Module Seminar</option>
+        
+                                        <?php
+                                            }                                        
+                                        ?>                                        
                                 ?>
                                 
                             </select> 

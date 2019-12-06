@@ -39,7 +39,7 @@ $page_name = 'pendaftaran';
                 $r5 = $db_akses->OpenQuery($q5);
                 
                 $iNomor = 0;
-                while ($row = mysqli_fetch_array ($r5, MYSQLI_ASSOC)) {
+                while ($row = mysqli_fetch_array($r5, MYSQLI_ASSOC)) {                    
                     $iNomor = $iNomor + 1;
                     echo $iNomor .'. <a href="data/module/' .$row['nama'].'">' . $row['nama']. '</a><br>';
                 }

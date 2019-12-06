@@ -26,9 +26,51 @@ interface DAO{
     public function generateSQLInsert();
     public function generateSQLUpdate();
     public function generateSQLDelete();
+    public function LoadObject($AObjectSQLArray);
     
  }
    
+class module implements DAO{
+    public $id;
+    public $nama;
+    public $is_tampilkan;
+
+    public $tablename = 'seminar_module';
+
+    public function generateSQLInsert() {
+        $this->id = gen_uuid();
+
+        $sSQL = "insert into   $this->tablename  (id        ,    nama     ,   is_tampilkan)";
+        $sSQL = $sSQL .                 " values('$this->id','$this->nama',$this->is_tampilkan";
+        $sSQL = $sSQL . ")";
+
+        return $sSQL;
+    }
+
+    public function generateSQLUpdate() {
+        $sSQL = "update " . $this->tablename;
+        $sSQL = $sSQL . " set nama = '" . $this->nama . "'";
+        $sSQL = $sSQL . " , is_tampilkan = '" . $this->is_tampilkan . "'";
+        $sSQL = $sSQL . " where id = '" . $this->id . "'";
+
+        return $sSQL;
+    }
+
+    public function generateSQLDelete(){
+        $sSQL = "delete from " . $this->tablename;
+        $sSQL = $sSQL . "where id = '" . $this->id ."'";
+        return $sSQL;
+    }
+
+    public function LoadObject($AObjectSQLArray){
+        if ($AObjectSQLArray['id'] != ''){
+            $this->id                = $AObjectSQLArray['id'];
+            $this->is_tampilkan      = $AObjectSQLArray['is_tampilkan'];
+            $this->nama              = $AObjectSQLArray['nama'];
+        }    
+    }
+}
+
 class peserta implements DAO{
     public $id;
     public $nama;
@@ -71,6 +113,8 @@ class peserta implements DAO{
     public function generateSQLUpdate() {
         $sSQL = "update " . $this->tablename;
         $sSQL = $sSQL . " set tempat_lahir = '" . $this->tempat_lahir . "'";
+        $sSQL = $sSQL . " , nama = '" . $this->nama . "'";
+        $sSQL = $sSQL . " , email = '" . $this->email . "'";
         $sSQL = $sSQL . " , tgl_lahir = '" . $this->tgl_lahir . "'";
         $sSQL = $sSQL . " , alamat_rumah = '" . $this->alamat_rumah . "'";
         $sSQL = $sSQL . " , no_ktp = '" . $this->no_ktp . "'";
@@ -98,6 +142,35 @@ class peserta implements DAO{
         $sSQL = "delete from " . $this->tablename;
         $sSQL = $sSQL . "where id = '" . $this->id ."'";
         return $sSQL;
+    }
+
+    public function LoadObject($AObjectSQLArray){
+        if ($AObjectSQLArray['id'] != ''){
+            $this->id                = $AObjectSQLArray['id'];
+            $this->is_admin          = $AObjectSQLArray['is_admin'];
+            $this->nama              = $AObjectSQLArray['nama'];
+            $this->email             = $AObjectSQLArray['email'];
+            $this->tempat_lahir      = $AObjectSQLArray['tempat_lahir'];
+            $this->tgl_lahir         = $AObjectSQLArray['tgl_lahir'];
+            $this->alamat_rumah      = $AObjectSQLArray['alamat_rumah'];
+            $this->no_ktp            = $AObjectSQLArray['no_ktp'];
+            $this->no_sk_ppat        = $AObjectSQLArray['no_sk_ppat'];
+
+            $this->tgl_sk_ppat       = $AObjectSQLArray['tgl_sk_ppat'];
+            $this->no_bas_ppat       = $AObjectSQLArray['no_bas_ppat'];
+            $this->tgl_bas_ppat      = $AObjectSQLArray['tgl_bas_ppat'];
+            $this->no_wa             = $AObjectSQLArray['no_wa'];
+            $this->no_telp_kantor    = $AObjectSQLArray['no_telp_kantor'];
+
+            $this->img_photo         = $AObjectSQLArray['img_photo'];
+            $this->img_ktp           = $AObjectSQLArray['img_ktp'];
+            $this->img_sk_ppat       = $AObjectSQLArray['img_sk_ppat'];
+            $this->img_bas           = $AObjectSQLArray['img_bas'];
+            $this->img_kartu_nama    = $AObjectSQLArray['img_kartu_nama'];
+            $this->img_kwitansi      = $AObjectSQLArray['img_kwitansi'];
+            $this->is_pembayaran_ok  = $AObjectSQLArray['is_pembayaran_ok'];
+
+        }    
     }
  }
 

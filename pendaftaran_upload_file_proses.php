@@ -23,8 +23,7 @@
         $peserta = new peserta();
 		if($_POST['upload']){
             $ekstensi_diperbolehkan	= array('png','jpg','jpeg');
-            $nama = $_FILES['file']['name'];
-			$img_photo = $_FILES['file']['name'];
+            $nama = $_FILES['file']['name'];			
 			$x = explode('.', $nama);
 			$ekstensi = strtolower(end($x));
 			$ukuran	= $_FILES['file']['size'];

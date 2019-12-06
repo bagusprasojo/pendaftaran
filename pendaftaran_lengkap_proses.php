@@ -68,6 +68,7 @@ if ($nama == '' or $tempat_lahir == '' or $tgl_lahir == '')
 
     $result = $db_akses->SaveToDB($peserta);            
     if ($result){	
+        $_SESSION['name']       = $peserta->nama;
         exit("<script>window.alert('Berhasil menyimpan data pendaftaran');
         window.location='pendaftaran_lengkap.php';</script>");
         
