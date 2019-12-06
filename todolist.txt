@@ -4,6 +4,7 @@ TODO :
 3. 
 4. Tambahkan informasi Kota, Propinsi
 5. Tambahkan filter data per jenis inputan di pendaftaran lengkap
+- Batasi hak akses donlot modul, cetak kartu jika belum bayar utk 
 
 DONE :
 - Tambahkan index.htm untuk tiap folder
