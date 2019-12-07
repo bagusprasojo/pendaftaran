@@ -1,9 +1,15 @@
 TODO :
-1. Tambahkan menu untuk konfirmasi pembayaran
-2. Tambahkan halaman untuk cek status konfirmasi pembayaran
-3. 
-4. Tambahkan informasi Kota, Propinsi
-5. Tambahkan filter data per jenis inputan di pendaftaran lengkap
+
+- Percantik tampilan daftar peserta
+- Ubah pesan konfirmasi, bedakan untuk yg sdh konfirmasi tapi blm di approve admin
+- Tambahkan fitur untuk hapus / sembunyikan / tampilkan materi
 
 DONE :
 - Tambahkan index.htm untuk tiap folder
+- Tambahkan menu untuk konfirmasi pembayaran
+- Tambahkan halaman untuk cek status konfirmasi pembayaran (jika ada pesan berjalan berrarti blm konfirmasi)
+- Tambahkan informasi Kota, Propinsi
+- Cek pesan email pembayaran
+- Tambahkan filter data per jenis inputan di pendaftaran lengkap
+- Tammbahkan place holder untuk photo
+- Buat table untuk download materi

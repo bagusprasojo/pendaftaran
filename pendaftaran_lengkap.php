@@ -46,7 +46,14 @@
                         }
                     ?>
                     <div class="kanan">
-                        <img src="<?php echo "data/" . $peserta->img_photo?>" height="472" width="100%">
+                        <?php 
+                            if ($peserta->img_photo != '') {
+                                $photo = $peserta->img_photo;
+                            } else {
+                                $photo = "icon/place_holder.png";
+                            }
+                        ?>
+                        <img src="<?php echo "data/" . $photo?>" height="472" width="100%">
                         
                         <table >
                             <?php if ($peserta->img_ktp != ''){ ?>
@@ -81,7 +88,7 @@
                     </div>
                     <div class="kiri">
                         <form action="pendaftaran_lengkap_proses.php" method="post">
-                            Nama : <br>
+                            Nama Lengkap Dengan Gelar Akademik : <br>
                             <div class="area">                            
                                 <input type="text" value="<?php echo $peserta->nama?>" name="nama" class="input" placeholder=" Nama Lengkap Sesuai KTP & Gelar">
                             </div>
@@ -95,7 +102,17 @@
                             <div class="area">
                                 <input type="date" value="<?php echo $peserta->tgl_lahir?>" name="tgl_lahir" class="input" placeholder=" Tanggal Lahir">
                             </div>
-                
+
+                            <div class="area">
+                                Propinsi : <br>    
+                                <input type="text" value="<?php echo $peserta->propinsi?>" name="propinsi" class="input" placeholder=" Propinsi">
+                            </div>
+
+                            <div class="area">
+                                Kabupaten / Kota : <br>    
+                                <input type="text" value="<?php echo $peserta->kabupaten?>" name="kabupaten" class="input" placeholder=" Kabupaten / Kota">
+                            </div>
+
                             <div class="area">
                                 Alamat Rumah : <br>
                                 <textarea  name = "alamat_rumah" rows="3" cols="20"><?php echo $peserta->alamat_rumah?></textarea>
@@ -135,6 +152,9 @@
                                 No Telp Kantor : <br>
                                 <input type="text" value="<?php echo $peserta->no_telp_kantor?>" name="no_telp_kantor" class="input" placeholder=" No Telp Kantor">
                             </div>
+
+                            Dimohon mengisi data dengan benar, kesalahan data bukan tanggung jawab panitia<br/><br/>
+                            
 
                             <div class="area">
                                 <input type="submit" class="submit" value="UPDATE">

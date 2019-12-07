@@ -83,7 +83,7 @@
                             <li class="has-sub"><a href='#'><span>Administrator</span></a>
                                 <ul>
                                     <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_list.php'><span>Daftar Peserta</span></a></li>
-                                    <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_list_konfirmasi.php'><span>>Update Status Pembayaran Peserta</span></a></li>                                    
+                                    <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_list_konfirmasi.php'><span>Update Status Pembayaran Peserta</span></a></li>                                    
                                     <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=2'><span>Upload File Module</span></a></li>                                    
                                 </ul>
                             </li>

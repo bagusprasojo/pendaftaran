@@ -82,6 +82,10 @@ class peserta implements DAO{
     public $is_admin = 0;
     public $tempat_lahir;
     public $tgl_lahir;
+
+    public $propinsi;
+    public $kabupaten;
+
     public $alamat_rumah;
     public $no_ktp;
     public $no_sk_ppat;
@@ -117,6 +121,10 @@ class peserta implements DAO{
         $sSQL = $sSQL . " , email = '" . $this->email . "'";
         $sSQL = $sSQL . " , tgl_lahir = '" . $this->tgl_lahir . "'";
         $sSQL = $sSQL . " , alamat_rumah = '" . $this->alamat_rumah . "'";
+
+        $sSQL = $sSQL . " , propinsi = '" . $this->propinsi . "'";
+        $sSQL = $sSQL . " , kabupaten = '" . $this->kabupaten . "'";
+
         $sSQL = $sSQL . " , no_ktp = '" . $this->no_ktp . "'";
         $sSQL = $sSQL . " , no_sk_ppat = '" . $this->no_sk_ppat . "'";		
 		$sSQL = $sSQL . " , tgl_sk_ppat = '" . $this->tgl_sk_ppat . "'";
@@ -153,6 +161,10 @@ class peserta implements DAO{
             $this->tempat_lahir      = $AObjectSQLArray['tempat_lahir'];
             $this->tgl_lahir         = $AObjectSQLArray['tgl_lahir'];
             $this->alamat_rumah      = $AObjectSQLArray['alamat_rumah'];
+
+            $this->propinsi          = $AObjectSQLArray['propinsi'];
+            $this->kabupaten         = $AObjectSQLArray['kabupaten'];
+
             $this->no_ktp            = $AObjectSQLArray['no_ktp'];
             $this->no_sk_ppat        = $AObjectSQLArray['no_sk_ppat'];
 

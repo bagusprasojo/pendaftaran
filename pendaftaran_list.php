@@ -34,25 +34,25 @@ $page_name = 'pendaftaran';
 	<div class="container_25">
 	    <div class="pendaftaran">        	
             <div class="bawah">                
+
             <?php
                 $q5 = "SELECT * FROM seminar_peserta";
                 $r5 = $db_akses->OpenQuery($q5);
-                echo '<P>
-                <h1>Daftar Peserta</h1>
+                echo '<div style="overflow-x:auto;">
                 <table border = 1 class="flyer" cellpadding="20" cellspacing="0" align="left" width="100%">
                 <tr>
+                <th width="20">No</th>
                     <th>Nama <br>Email</th>                    
-                    <th>Tempat <br>Tgl Lahir</th>
-                    <th>Alamat</th>
+                    <th>Tanggal Lahir</th>
                     <th>No KTP</th>
                     <th>No & <br>Tanggal SK PPAT</th>
                     
                     <th>No & <br/>Tanggal BAS PPAT</th>
                     <th>No WA & Telp Kantor</th>
-                    <th>Administrator</th>
-                    <th>Operasi</th>
+                    
+                    
                 </tr>';
-
+                $Nomor = 0;
                 while ($row = mysqli_fetch_array ($r5, MYSQLI_ASSOC)) {
                     if ($row['is_admin'] == 1) {
                         $is_admin = 'Ya';
@@ -64,23 +64,32 @@ $page_name = 'pendaftaran';
                         $status_admin = '1';
                     }
 
+                    $Nomor = $Nomor + 1;
+
                     echo '<tr>
-                          <td align="left">'.$row['nama'].'<br>' .$row['email']. '</td>                          
-                          <td align="left">'.$row['tempat_lahir'].'<br/>'.$row['tgl_lahir'].'</td>
-                          <td align="left">'.$row['alamat_rumah'].'</td>
+                          <td rowspan=2>'.$Nomor.'</td>  
+                          <td align="left">'.$row['nama'].'<br>' .$row['email']. '<br/><br/>
+                            
+                          </td>                          
+                          <td align="left">'.$row['tgl_lahir'].'</td>
+                          
                           <td align="left">'.$row['no_ktp'].'</td>
                           <td align="left">'.$row['no_sk_ppat'].'<br/>'.$row['tgl_sk_ppat'].'</td>
                           <td align="left">'.$row['no_bas_ppat'].'<br>'.$row['tgl_bas_ppat'].'</td>
-                          <td align="left">'.$row['no_wa'].'<br>'.$row['no_telp_kantor'].'</td>
-                          <td align="left">'.$is_admin.'</td>
-                          <td align="left">
-                          <a href="pendaftaran_konfirmasi.php?id='.$row['id'].'">Konfirmasi</a> |
-                          <a href="pendaftaran_delete.php?id='.$row['id'].'">Hapus</a> |
+                          <td align="left"><img src="data/icon/wa-icon.png">'.$row['no_wa'].'<br><img src="data/icon/phone-icon.png">'.$row['no_telp_kantor'].'</td>                        
+                          
+                          </tr>
+                          <tr>
+                          <td colspan=4 align="left"> '.$row['alamat_rumah'].'</td>
+                          <td colspan=3 align="left"> 
+                          <a href="pendaftaran_konfirmasi.php?id='.$row['id'].'">Konfirmasi</a> | 
+                          <a href="pendaftaran_delete.php?id='.$row['id'].'">Hapus</a> | 
                           <a href="pendaftaran_set_as_admin.php?id='.$row['id'].'&status_admin='.$status_admin.'">'.$set_as_admin.'</a>
                           </td>
                           </tr>';                    
                 }
                 echo '</table>'; 
+                echo '</div>';
                 ?>
             </div>    
         </div>

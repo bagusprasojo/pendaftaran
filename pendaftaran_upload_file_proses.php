@@ -78,7 +78,7 @@
                             echo "Mailer Error: " . $mail->ErrorInfo;                            
                             exit;
                             } else {            										
-                                exit("<script>window.alert('Berhasil menyimpan data konfirmasi pembayaran, Silahkan cek Email Anda');
+                                exit("<script>window.alert('Berhasil menyimpan data konfirmasi pembayaran, admin kami akan menindaklanjutinya, mohon ditunggu');
                                 window.location='pendaftaran_upload_file.php?bayar=1';</script>");
                             }    
                         } else {                        

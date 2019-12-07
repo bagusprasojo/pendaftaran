@@ -24,7 +24,7 @@ $page_name = 'pendaftaran';
 <div class="konten">
 	<div class="container_25">
 	    <div class="pendaftaran">        	
-            <div class="bawah">
+            <div class="bawah">                
                 <div class="kiri">
                     <form action="pendaftaran_proses.php" method="post">
                         <div class="area">
@@ -44,6 +44,15 @@ $page_name = 'pendaftaran';
                         </div>
                     </form>
                 </div>
+                <div class="kanan">
+                    Informasi Pembayaran<br/>
+                    Biaya Seminar Rp 500.000,-<br/><br/>
+
+                    Transfer ke:<br/>
+                    Bank BNI No. Rekening : 0415345093 <br/>
+                    a.n. IPPAT Jateng<br/>
+                </div>
+
             </div>	
         </div>    
     </div>

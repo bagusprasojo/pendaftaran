@@ -1680,6 +1680,7 @@ body{
 	-moz-box-shadow: inset 0px 0px 0px 1px rgba(221,221,221,1);
 	box-shadow: inset 0px 0px 0px 1px rgba(221,221,221,1);
 }
+
 .pendaftaran .bawah{
 	float:left;
 	width:100%;
@@ -1693,7 +1694,7 @@ body{
 	font-family: sans-serif;
     color: #444;
     border-collapse: collapse;
-    width: 50%;
+    width: 100%;
     border: 1px solid #f2f5f7;
 }
 
@@ -1706,7 +1707,8 @@ body{
 }
  
 .pendaftaran .bawah table, th, td {
-    padding: 8px 20px;
+	padding-left: 8px;
+	padding-right: 20px;
     text-align: left;
 }
  
@@ -1721,8 +1723,8 @@ body{
 
 .pendaftaran .bawah .kanan{
 	float:right;
-	width:32%;
-	padding:1.5%;
+	width:34%;
+	padding:0.5%;
 	background:#FFF;
 	overflow:hidden;
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(221,221,221,1);
@@ -1732,8 +1734,8 @@ body{
 
 .pendaftaran .bawah .kiri{
 	float:left;
-	width:60%;
-	padding:1%;
+	width:63.5%;
+	padding:0.5%;
 	background:#FFF;
 	overflow:hidden;
 	-webkit-box-shadow: inset 0px 0px 0px 1px rgba(221,221,221,1);

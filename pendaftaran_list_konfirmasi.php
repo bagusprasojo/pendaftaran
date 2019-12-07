@@ -44,7 +44,7 @@ $page_name = 'pendaftaran';
                     while ($row = mysqli_fetch_array($r5, MYSQLI_ASSOC)) {                    
                         $iNomor = $iNomor + 1;
                         echo "<tr>";
-                        echo "<td>";
+                        echo "<td width='35'>";
                         echo $iNomor;
                         echo "</td>";
 
@@ -52,11 +52,11 @@ $page_name = 'pendaftaran';
                         echo $row['email']."<br/>" . $row['nama'];
                         echo "</td>";
 
-                        echo "<td>";
-                        echo "<a href='data/$row[img_kwitansi]'>Photo</a>";
+                        echo "<td width='100'>";
+                        echo "<a href='data/$row[img_kwitansi]' target='_blank'>Photo</a>";
                         echo "</td>";
 
-                        echo "<td>";
+                        echo "<td width='100'>";
                         echo "<a href='pendaftaran_list_konfirmasi_proses.php?id=" . $row['id']."&is_pembayaran_ok=1'>"."Konfirmasi</a>";
                         echo "</td>";    
 
@@ -76,7 +76,7 @@ $page_name = 'pendaftaran';
                     while ($row = mysqli_fetch_array($r5, MYSQLI_ASSOC)) {                    
                         $iNomor = $iNomor + 1;
                         echo "<tr>";
-                        echo "<td>";
+                        echo "<td width='35'>";
                         echo $iNomor;
                         echo "</td>";
 
@@ -84,11 +84,11 @@ $page_name = 'pendaftaran';
                         echo $row['email']."<br/>" . $row['nama'];
                         echo "</td>";
 
-                        echo "<td>";
-                        echo "<a href='data/$row[img_kwitansi]'>Photo</a>";
+                        echo "<td width='100'>";
+                        echo "<a href='data/$row[img_kwitansi]' target='_blank'>Photo</a>";
                         echo "</td>";
 
-                        echo "<td>";
+                        echo "<td width='100'>";
                         echo "<a href='pendaftaran_list_konfirmasi_proses.php?id=" . $row['id']."&is_pembayaran_ok=0'>"."Batalkan</a>";
                         echo "</td>";    
 

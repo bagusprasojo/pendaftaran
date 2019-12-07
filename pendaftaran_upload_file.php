@@ -85,10 +85,47 @@
 
                         <div class="area">
                             <input type="submit" name="upload" value="Upload">
-                        </div>                
+                        </div>  
+
+                               
                     </form>
                 </div>
+                    <?php
+                        if ($bayar == '1'){
+                            echo "<div class='kanan'>";
+                            echo "<img src='data/$peserta->img_kwitansi' width='100%'>";
+                            echo "</div>";
+                        }
+                        ?>
+                    <?php
+                        if ($bayar == '2' and $peserta->is_admin == '1'){
+                            echo "<div class='kanan'>";
+                            $q5 = "SELECT * FROM seminar_module where is_tampilkan= 1";
+                            $r5 = $db_akses->OpenQuery($q5);
+                            
+                            echo "<table width='100%'>";
+                            echo "<tr><th>No</th><th>Judul</th></tr>";
+                            $iNomor = 0;
+                            while ($row = mysqli_fetch_array($r5, MYSQLI_ASSOC)) {                                        
+                                $iNomor = $iNomor + 1;
+                                echo "<tr>";
+                                echo "<td width='30'>";
+                                echo $iNomor;
+                                echo "</td>";
+
+                                echo "<td>";
+                                echo '<a href="data/module/' .$row['nama'].'">' . $row['nama']. '</a>';
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo '</table>'; 
+                            echo "</div>";
+                        }
+                    ?>       
+                </div>
             </div>	
+
+            
         </div>    
     </div>
 </div>

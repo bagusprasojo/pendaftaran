@@ -38,10 +38,20 @@ $page_name = 'pendaftaran';
                 $q5 = "SELECT * FROM seminar_module where is_tampilkan= 1";
                 $r5 = $db_akses->OpenQuery($q5);
                 
+                echo "<table>";
+                echo "<tr><th>No</th><th>Judul</th></tr>";
                 $iNomor = 0;
-                while ($row = mysqli_fetch_array($r5, MYSQLI_ASSOC)) {                    
+                while ($row = mysqli_fetch_array($r5, MYSQLI_ASSOC)) {                                        
                     $iNomor = $iNomor + 1;
-                    echo $iNomor .'. <a href="data/module/' .$row['nama'].'">' . $row['nama']. '</a><br>';
+                    echo "<tr>";
+                    echo "<td width='30'>";
+                    echo $iNomor;
+                    echo "</td>";
+
+                    echo "<td>";
+                    echo "<a href='data/module/" .$row['nama']."' target=_blank>" . $row["nama"]. "</a>";
+                    echo "</td>";
+                    echo "</tr>";
                 }
                 echo '</table>'; 
                 ?>
