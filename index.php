@@ -16,7 +16,7 @@ $page_name = 'pendaftaran';
 
 <div class="atas-menu">
 	<div class="container_25">
-    	<div class="kiri">Pendaftaran</div>
+    	<div class="kiri">Pendaftaran RAKERWIL IPPAT Jawa Tengah</div>
         <div class="kanan"><a href="index.php">Beranda</a> / Pendaftaran</div>
     </div>
 </div>
@@ -44,7 +44,7 @@ $page_name = 'pendaftaran';
                         </div>
                     </form>
                 </div>
-                <div class="kanan">
+                <div class="kanan" style = "display:none">
                     Informasi Pembayaran<br/>
                     Biaya Seminar Rp 500.000,-<br/><br/>
 
