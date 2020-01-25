@@ -54,37 +54,38 @@
                             }
                         ?>
                         <img src="<?php echo "data/" . $photo?>" height="472" width="100%">
-                        
-                        <table >
-                            <?php if ($peserta->img_ktp != ''){ ?>
-                                <tr><td><a href="<?php echo "data/" . $peserta->img_ktp?>">KTP</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
-                            <?php } else { ?>
-                                <tr><td>KTP</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
-                            <?php } ?>    
+                        <div style = "display:none">
+                            <table >
+                                <?php if ($peserta->img_ktp != ''){ ?>
+                                    <tr><td><a href="<?php echo "data/" . $peserta->img_ktp?>">KTP</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
+                                <?php } else { ?>
+                                    <tr><td>KTP</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
+                                <?php } ?>    
 
-                            <?php if ($peserta->img_sk_ppat != ''){ ?>
-                                <tr><td><a href="<?php echo "data/" . $peserta->img_sk_ppat?>">SK PPAT</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
-                            <?php } else { ?>
-                                <tr><td>SK PPAT</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
-                            <?php } ?>    
+                                <?php if ($peserta->img_sk_ppat != ''){ ?>
+                                    <tr><td><a href="<?php echo "data/" . $peserta->img_sk_ppat?>">SK PPAT</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
+                                <?php } else { ?>
+                                    <tr><td>SK PPAT</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
+                                <?php } ?>    
 
-                            <?php if ($peserta->img_bas != ''){ ?>
-                                <tr><td><a href="<?php echo "data/" . $peserta->img_bas?>">BAS PPAT</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
-                            <?php } else { ?>
-                                <tr><td>BAS PPAT</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
-                            <?php } ?>    
-                            <?php if ($peserta->img_kartu_nama != ''){ ?>
-                                <tr><td><a href="<?php echo "data/" . $peserta->img_kartu_nama?>">Kartu Nama</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
-                            <?php } else { ?>
-                                <tr><td>Kartu Nama</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
-                            <?php } ?>    
-                            <?php if ($peserta->img_kwitansi != ''){ ?>
-                                <tr><td><a href="<?php echo "data/" . $peserta->img_kwitansi?>">Kwitansi Pembayaran</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
-                            <?php } else { ?>
-                                <tr><td>Kwitansi Pembayaran</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
-                                <tr><td></td><td></td></tr>
-                            <?php } ?>    
-                        </table>
+                                <?php if ($peserta->img_bas != ''){ ?>
+                                    <tr><td><a href="<?php echo "data/" . $peserta->img_bas?>">BAS PPAT</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
+                                <?php } else { ?>
+                                    <tr><td>BAS PPAT</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
+                                <?php } ?>    
+                                <?php if ($peserta->img_kartu_nama != ''){ ?>
+                                    <tr><td><a href="<?php echo "data/" . $peserta->img_kartu_nama?>">Kartu Nama</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
+                                <?php } else { ?>
+                                    <tr><td>Kartu Nama</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
+                                <?php } ?>    
+                                <?php if ($peserta->img_kwitansi != ''){ ?>
+                                    <tr><td><a href="<?php echo "data/" . $peserta->img_kwitansi?>">Kwitansi Pembayaran</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
+                                <?php } else { ?>
+                                    <tr><td>Kwitansi Pembayaran</td><td> : </td><td><img src="data/icon/nok-icon.png"></td></tr>
+                                    <tr><td></td><td></td></tr>
+                                <?php } ?>    
+                            </table>
+                        </div>
                     </div>
                     <div class="kiri">
                         <form action="pendaftaran_lengkap_proses.php" method="post">

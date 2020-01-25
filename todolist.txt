@@ -3,6 +3,11 @@ TO DO
 2. Sembunyikan konfirmasi pembayaran
 3. Tambahkan menu Cetak ID Card
 4. Tambahkan menu cetak Sertifkat
+5. Ubah Upload file hanya utk Photo
+
+DONE
+1. Tampilan halaman peserta hanya untuk photo
+ 
 
 
 
