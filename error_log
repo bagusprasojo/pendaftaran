@@ -136,3 +136,4 @@
 [04-Dec-2019 14:14:27 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/pengwili/public_html/menu-footer.php on line 2
 [04-Dec-2019 14:14:27 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/pengwili/public_html/menu-footer.php on line 23
 [04-Dec-2019 14:14:27 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/pengwili/public_html/menu-footer.php on line 24
+[07-Dec-2019 10:50:00 Asia/jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/pengwili/public_html/pendaftaran/db_akses.php on line 16
