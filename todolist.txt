@@ -3,6 +3,10 @@ TODO :
 - Percantik tampilan daftar peserta
 - Ubah pesan konfirmasi, bedakan untuk yg sdh konfirmasi tapi blm di approve admin
 - Tambahkan fitur untuk hapus / sembunyikan / tampilkan materi
+- Kengotaan
+    - Berdasarkan NIK
+    - Hubungkan data pendaftaran dengan data anggota
+    - Untuk perbaikan data , anggota diminta untuk mendaftar utk verifikasi data
 
 DONE :
 - Tambahkan index.htm untuk tiap folder
@@ -13,3 +17,6 @@ DONE :
 - Tambahkan filter data per jenis inputan di pendaftaran lengkap
 - Tammbahkan place holder untuk photo
 - Buat table untuk download materi
+
+
+- D
