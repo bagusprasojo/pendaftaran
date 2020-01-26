@@ -120,6 +120,19 @@
                             </div>
                             
                             <div class="area">
+                                Peserta / Panitia : <br>    
+                                <select class="input" name="fungsi">
+                                    <option value="Peserta" <?php if ($peserta->fungsi == "Peserta") {echo "selected";} ?>>Peserta</option>
+                                    <option value="Panitia" <?php if ($peserta->fungsi == "Panitia") {echo "selected";} ?>>Panitia</option>                                    
+                                </select>
+                            </div>
+
+                            <div class="area">
+                                Jabatan : <br>    
+                                <input type="text" value="<?php echo $peserta->jabatan?>" name="jabatan" class="input" placeholder=" Jabatan">
+                            </div>
+
+                            <div class="area">
                                 No KTP : <br>    
                                 <input type="text" value="<?php echo $peserta->no_ktp?>" name="no_ktp" class="input" placeholder=" No KTP">
                             </div>

@@ -26,6 +26,7 @@
         }
 
         function ExecuteQuery($ASQL){
+            #echo $ASQL;
             $query = mysqli_query($this->link,$ASQL);    
             if($query){
                 return TRUE;

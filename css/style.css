@@ -2089,6 +2089,17 @@ body{
 .table1 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+
+
+}
+
+.id_card{
+    background-color: #f1f6e0;
+    border-style: solid;
+    width:584px;
+    align-self: center;
+
 }
 
 

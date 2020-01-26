@@ -13,6 +13,9 @@ $tempat_lahir       = $db_akses->mysqli_real_escape_string($_POST['tempat_lahir'
 $propinsi           = $db_akses->mysqli_real_escape_string($_POST['propinsi']);
 $kabupaten          = $db_akses->mysqli_real_escape_string($_POST['kabupaten']);
 
+$fungsi             = $db_akses->mysqli_real_escape_string($_POST['fungsi']);
+$jabatan            = $db_akses->mysqli_real_escape_string($_POST['jabatan']);
+
 $alamat_rumah       = $db_akses->mysqli_real_escape_string($_POST['alamat_rumah']);
 $no_ktp             = $db_akses->mysqli_real_escape_string($_POST['no_ktp']);
 $no_sk_ppat         = $db_akses->mysqli_real_escape_string($_POST['no_sk_ppat']);
@@ -112,6 +115,9 @@ if ($nama == '' or $tempat_lahir == '' or $tgl_lahir == '')
     $peserta->propinsi          = $propinsi;
     $peserta->kabupaten         = $kabupaten;
 
+    $peserta->fungsi            = $fungsi;
+    $peserta->jabatan           = $jabatan;
+
     $peserta->alamat_rumah      = $alamat_rumah;
     $peserta->no_ktp            = $no_ktp;
     $peserta->no_sk_ppat        = $no_sk_ppat;
@@ -125,6 +131,7 @@ if ($nama == '' or $tempat_lahir == '' or $tgl_lahir == '')
     $result = $db_akses->SaveToDB($peserta);            
     if ($result){	
         $_SESSION['name']       = $peserta->nama;
+        
         exit("<script>window.alert('Berhasil menyimpan data pendaftaran');
         window.location='pendaftaran_lengkap.php';</script>");
         

@@ -17,9 +17,9 @@
                         <li class="has-sub"><a href='#'><span>Peserta</span></a>
                             <ul>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_lengkap.php'><span>Update Data Pribadi</span></a></li>
-                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=0'><span>Upload File Pendaftaran</span></a></li>
-                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=1'><span>Konfirmasi Pembayaran</span></a></li>
-                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='#'><span>Cetak Kartu Peserta</span></a></li>
+                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=0'><span>Upload Pas Photo</span></a></li>
+                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_id_card.php'><span>Cetak Kartu Peserta</span></a></li>
+                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_certificate.php'><span>Cetak Certificate</span></a></li>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_module.php'><span>Download Materi</span></a></li>
                             </ul>
                         </li>
@@ -72,9 +72,9 @@
                         <li class="has-sub"><a href='#'><span>Peserta</span></a>
                             <ul>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_lengkap.php'><span>Update Data Pribadi</span></a></li>
-                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=0'><span>Upload File Pendaftaran</span></a></li>
-                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=1'><span>Konfirmasi Pembayaran</span></a></li>
+                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_upload_file.php?bayar=0'><span>Upload Pas Photo</span></a></li>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_id_card.php'><span>Cetak Kartu Peserta</span></a></li>
+                                <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_certificate.php'><span>Cetak Certificate</span></a></li>
                                 <li class="<?php if($page_name === 'keanggotaan'){echo "active";}?>"><a href='pendaftaran_module.php'><span>Download Materi</span></a></li>
                             </ul>
                         </li>

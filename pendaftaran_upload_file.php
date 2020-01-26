@@ -57,13 +57,14 @@
                                     if ($bayar == '0') {
                                 ?>
                                     <option value="img_photo">Pas Photo</option>
+                                    
+                                <?php
+                                    } elseif ($bayar == '1'){
+                                ?>
                                     <option value="img_ktp">KTP</option>
                                     <option value="img_sk_ppat">SK PPAT</option>
                                     <option value="img_bas">BA PPAT</option>
                                     <option value="img_kartu_nama">Kartu Nama</option>
-                                <?php
-                                    } elseif ($bayar == '1'){
-                                ?>
                                     <option value="img_kwitansi">Kwitansi Pembayaran</option>
 
                                 <?php

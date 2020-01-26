@@ -88,6 +88,10 @@ class peserta implements DAO{
 
     public $alamat_rumah;
     public $no_ktp;
+
+    public $fungsi;
+    public $jabatan;
+
     public $no_sk_ppat;
 	public $tgl_sk_ppat;
 	public $no_bas_ppat;
@@ -124,6 +128,9 @@ class peserta implements DAO{
 
         $sSQL = $sSQL . " , propinsi = '" . $this->propinsi . "'";
         $sSQL = $sSQL . " , kabupaten = '" . $this->kabupaten . "'";
+
+        $sSQL = $sSQL . " , fungsi = '" . $this->fungsi . "'";
+        $sSQL = $sSQL . " , jabatan = '" . $this->jabatan . "'";
 
         $sSQL = $sSQL . " , no_ktp = '" . $this->no_ktp . "'";
         $sSQL = $sSQL . " , no_sk_ppat = '" . $this->no_sk_ppat . "'";		
@@ -165,6 +172,9 @@ class peserta implements DAO{
             $this->propinsi          = $AObjectSQLArray['propinsi'];
             $this->kabupaten         = $AObjectSQLArray['kabupaten'];
 
+            $this->fungsi            = $AObjectSQLArray['fungsi'];
+            $this->jabatan           = $AObjectSQLArray['jabatan'];
+            
             $this->no_ktp            = $AObjectSQLArray['no_ktp'];
             $this->no_sk_ppat        = $AObjectSQLArray['no_sk_ppat'];
 
