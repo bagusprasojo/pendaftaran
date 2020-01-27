@@ -71,7 +71,8 @@ $page_name = 'pendaftaran';
                         <tr><td><img src="<?php echo "data/" . $photo?>" height="148" width="131"></td><td></td>
                             <td>
                                 <?php 
-                                    include "phpqrcode/qrlib.php";
+                                    include "./phpqrcode/qrlib.php";
+                                    
                                     QRcode::png("http://pengwilippatjateng.org/","qrcode.png","M",4,4);
                                     echo "<img src='qrcode.png'/>"
 

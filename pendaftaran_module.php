@@ -23,7 +23,7 @@ $page_name = 'pendaftaran';
 
 <div class="atas-menu">
 	<div class="container_25">
-    	<div class="kiri">Download Materi Seminar</div>
+    	<div class="kiri">Download Materi</div>
         <div class="kanan"><a href="index.php">Beranda</a> / Pendaftaran</div>
     </div>
 </div>

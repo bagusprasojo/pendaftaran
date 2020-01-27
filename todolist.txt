@@ -1,7 +1,8 @@
 TO DO
-
-
-
+0.Ubah ukuran id card
+1. Linkan qrcode di id card dengan data peserta
+2. Hilangkan hal modul
+3. Ubah pengumuman rakerwil
 4. Tambahkan menu cetak Sertifkat
 7. Buang footer sponsor
 8. Buang konfirmasi pembayaran administrator
