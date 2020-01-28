@@ -38,7 +38,7 @@ $page_name = 'pendaftaran';
                             <input type="text" name="nama" class="input" placeholder=" Nama">
                         </div>
                         <div class="area">
-                            <input type="email" name="email" class="input" placeholder=" Email">
+                            <input type="email" name="email" class="input" placeholder=" Email (Email Yang Didaftarkan di ATR BPN)">
                         </div>
                         <div class="area">
                             <input type="password" name="password" class="input" placeholder=" Password">
