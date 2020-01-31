@@ -36,7 +36,7 @@ $page_name = 'pendaftaran';
             <div class="bawah">                
 
             <?php
-                $q5 = "SELECT * FROM seminar_peserta";
+                $q5 = "SELECT * FROM seminar_peserta order by nama";
                 $r5 = $db_akses->OpenQuery($q5);
                 echo '<div style="overflow-x:auto;">
                 <table border = 1 class="flyer" cellpadding="20" cellspacing="0" align="left" width="100%">
@@ -82,6 +82,7 @@ $page_name = 'pendaftaran';
                           <tr>
                           <td colspan=4 align="left"> '.$row['alamat_rumah'].'</td>
                           <td colspan=3 align="left"> 
+                          <a href="pendaftaran_id_card.php?id_id_card='.$row['id'].'">Cetak ID Card</a> |
                           <a href="pendaftaran_konfirmasi.php?id='.$row['id'].'">Konfirmasi</a> | 
                           <a href="pendaftaran_delete.php?id='.$row['id'].'">Hapus</a> | 
                           <a href="pendaftaran_set_as_admin.php?id='.$row['id'].'&status_admin='.$status_admin.'">'.$set_as_admin.'</a>

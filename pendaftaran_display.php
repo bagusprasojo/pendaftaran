@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="kiri">
-                        <form action="pendaftaran_lengkap_proses.php" method="post">
+                        <form>
                             Nama Lengkap Dengan Gelar Akademik : <br>
                             <div class="area">                            
                                 <input type="text" value="<?php echo $peserta->nama?>" name="nama" class="input" placeholder=" Nama Lengkap Sesuai KTP & Gelar">
@@ -101,13 +101,18 @@
                             </div>
 
                             <div class="area">
-                                Propinsi : <br>    
+                                Propinsi Jabatan PPAT: <br>    
                                 <input type="text" value="<?php echo $peserta->propinsi?>" name="propinsi" class="input" placeholder=" Propinsi">
                             </div>
 
                             <div class="area">
-                                Kabupaten / Kota : <br>    
+                                Kabupaten / Kota Jabatan PPAT: <br>    
                                 <input type="text" value="<?php echo $peserta->kabupaten?>" name="kabupaten" class="input" placeholder=" Kabupaten / Kota">
+                            </div>
+
+                            <div class="area">
+                                Alamat Kantor : <br>
+                                <textarea  name = "alamat_kantor" rows="3" cols="20"><?php echo $peserta->alamat_kantor?></textarea>
                             </div>
 
                             <div class="area">
@@ -162,14 +167,10 @@
                                 No Telp Kantor : <br>
                                 <input type="text" value="<?php echo $peserta->no_telp_kantor?>" name="no_telp_kantor" class="input" placeholder=" No Telp Kantor">
                             </div>
-
-                            Dimohon mengisi data dengan benar, kesalahan data bukan tanggung jawab panitia<br/><br/>
-                            
-
-                            <div class="area">
-                                <input type="submit" class="submit" value="UPDATE">
-                            </div>
                         </form>
+
+
+                            
                     </div>
                 </div>	
             </div>    

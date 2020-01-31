@@ -87,6 +87,7 @@ class peserta implements DAO{
     public $kabupaten;
 
     public $alamat_rumah;
+    public $alamat_kantor;
     public $no_ktp;
 
     public $fungsi;
@@ -125,6 +126,7 @@ class peserta implements DAO{
         $sSQL = $sSQL . " , email = '" . $this->email . "'";
         $sSQL = $sSQL . " , tgl_lahir = '" . $this->tgl_lahir . "'";
         $sSQL = $sSQL . " , alamat_rumah = '" . $this->alamat_rumah . "'";
+        $sSQL = $sSQL . " , alamat_kantor = '" . $this->alamat_kantor . "'";
 
         $sSQL = $sSQL . " , propinsi = '" . $this->propinsi . "'";
         $sSQL = $sSQL . " , kabupaten = '" . $this->kabupaten . "'";
@@ -168,6 +170,8 @@ class peserta implements DAO{
             $this->tempat_lahir      = $AObjectSQLArray['tempat_lahir'];
             $this->tgl_lahir         = $AObjectSQLArray['tgl_lahir'];
             $this->alamat_rumah      = $AObjectSQLArray['alamat_rumah'];
+
+            $this->alamat_kantor     = $AObjectSQLArray['alamat_kantor'];
 
             $this->propinsi          = $AObjectSQLArray['propinsi'];
             $this->kabupaten         = $AObjectSQLArray['kabupaten'];

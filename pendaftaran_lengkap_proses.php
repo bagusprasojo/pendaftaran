@@ -12,6 +12,7 @@ $tempat_lahir       = $db_akses->mysqli_real_escape_string($_POST['tempat_lahir'
 
 $propinsi           = $db_akses->mysqli_real_escape_string($_POST['propinsi']);
 $kabupaten          = $db_akses->mysqli_real_escape_string($_POST['kabupaten']);
+$alamat_kantor      = $db_akses->mysqli_real_escape_string($_POST['alamat_kantor']);
 
 $fungsi             = $db_akses->mysqli_real_escape_string($_POST['fungsi']);
 $jabatan            = $db_akses->mysqli_real_escape_string($_POST['jabatan']);
@@ -55,6 +56,12 @@ if ($kabupaten == '')
     exit("<script>window.alert('Kabupaten belum diisi, mohon dilengkapi terlebih dahulu');
     document.location.href='javascript:history.go(-1)';</script>");
 } 
+
+if ($alamat_kantor == '')
+{
+    exit("<script>window.alert('Alamat Kantor belum diisi, mohon dilengkapi terlebih dahulu');
+    document.location.href='javascript:history.go(-1)';</script>");
+}
 
 if ($alamat_rumah == '')
 {
@@ -114,6 +121,7 @@ if ($nama == '' or $tempat_lahir == '' or $tgl_lahir == '')
 
     $peserta->propinsi          = $propinsi;
     $peserta->kabupaten         = $kabupaten;
+    $peserta->alamat_kantor     = $alamat_kantor;
 
     $peserta->fungsi            = $fungsi;
     $peserta->jabatan           = $jabatan;

@@ -46,8 +46,36 @@ $page_name = 'pendaftaran';
             }
         }
 
+        function WordWrap_BP($AKata){
+            $text_new = trim($AKata);
+
+            $isSudahTurun = 0;
+            if (strlen($text_new) >= 29) {
+                $text_a = explode(' ', trim($text_new));
+                
+                $text_new = '';
+                foreach($text_a as $word){
+                    #$text_new = $text_new .' '.$word;
+                    if(strlen($text_new .' '.$word) > 29 and $isSudahTurun == 0){
+                        $text_new .= "\n".$word;
+                        $isSudahTurun = 1;
+                    } else {
+                        $text_new .= $word . " ";
+                    }
+                }
+            }
+            
+            return $text_new;
+        }
+
         $peserta = new peserta();
-        $peserta->id = $_SESSION['id'];
+
+        $id_id_card = isset($_GET['id_id_card']) ? $_GET['id_id_card'] : '';
+        if ($id_id_card == ''){
+            $peserta->id = $_SESSION['id'];
+        } else {
+            $peserta->id = $id_id_card;
+        }
 
         $db_akses = new db_akses();
         $db_akses->LoadByID($peserta);
@@ -105,23 +133,27 @@ $page_name = 'pendaftaran';
         Imagettftext($frame, $font_size, 0, $start_x, $start_y, $black, $font, "Nama");
         Imagettftext($frame, $font_size, 0, $start_x + 200, $start_y  , $black, $font, ":");
         
-        $isSudahTurun = 0;
-        if (strlen($peserta->nama) >= 29) {
-            $text_a = explode(' ', trim($peserta->nama));
-            $text_new = '';
-            foreach($text_a as $word){
-                #$text_new = $text_new .' '.$word;
-                if(strlen($text_new .' '.$word) > 29 and $isSudahTurun == 0){
-                    $text_new .= "\n".$word;
-                    $isSudahTurun = 1;
-                } else {
-                    $text_new .= " ".$word;
-                }
-            }
-        }
-        Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y  , $black, $font, $text_new);
+        // $text_new = $peserta->nama;
 
-        if ($isSudahTurun == 1){
+        // $isSudahTurun = 0;
+        // if (strlen($peserta->nama) >= 29) {
+        //     $text_a = explode(' ', trim($peserta->nama));
+            
+        //     $text_new = '';
+        //     foreach($text_a as $word){
+        //         #$text_new = $text_new .' '.$word;
+        //         if(strlen($text_new .' '.$word) > 29 and $isSudahTurun == 0){
+        //             $text_new .= "\n".$word;
+        //             $isSudahTurun = 1;
+        //         } else {
+        //             $text_new .= " ".$word;
+        //         }
+        //     }
+        // } 
+
+        Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y  , $black, $font, WordWrap_BP($peserta->nama));
+
+        if (strlen(trim($peserta->nama)) >= 29) {
             $start_y = $start_y + 50;
         }
         
@@ -138,7 +170,7 @@ $page_name = 'pendaftaran';
         $start_y = $start_y + 50;
         Imagettftext($frame, $font_size, 0, $start_x, $start_y, $black, $font, "Jabatan");
         Imagettftext($frame, $font_size, 0, $start_x + 200, $start_y, $black, $font, ":");
-        Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y, $black, $font, $peserta->jabatan);
+        Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y, $black, $font, WordWrap_BP($peserta->jabatan));
 
         # Save the image to a file
 

@@ -105,13 +105,18 @@
                             </div>
 
                             <div class="area">
-                                Propinsi : <br>    
+                                Propinsi Jabatan PPAT: <br>    
                                 <input type="text" value="<?php echo $peserta->propinsi?>" name="propinsi" class="input" placeholder=" Propinsi">
                             </div>
 
                             <div class="area">
-                                Kabupaten / Kota : <br>    
+                                Kabupaten / Kota Jabatan PPAT: <br>    
                                 <input type="text" value="<?php echo $peserta->kabupaten?>" name="kabupaten" class="input" placeholder=" Kabupaten / Kota">
+                            </div>
+
+                            <div class="area">
+                                Alamat Kantor : <br>
+                                <textarea  name = "alamat_kantor" rows="3" cols="20"><?php echo $peserta->alamat_kantor?></textarea>
                             </div>
 
                             <div class="area">
@@ -128,7 +133,7 @@
                             </div>
 
                             <div class="area">
-                                Jabatan : <br>    
+                                Jabatan : <a href='https://pengwilippatjateng.org/pendaftaran/data/module/004%2021%2012%2019%20Penyusunan%20ProKer%20Pengwil%20IPPAT%20Jateng%20v%2029%2001%202020.pdf' target="_blank"> Lihat Daftar Jabatan</a><br>    
                                 <input type="text" value="<?php echo $peserta->jabatan?>" name="jabatan" class="input" placeholder=" Jabatan">
                             </div>
 
