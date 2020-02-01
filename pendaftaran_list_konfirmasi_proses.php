@@ -23,4 +23,6 @@ if ($db_akses->SaveToDB($peserta)) {
                                 window.location='pendaftaran_list_konfirmasi.php';</script>");    
 }
 
+unset($db_akses);
+unset($peserta);
 ?>

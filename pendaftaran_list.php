@@ -36,8 +36,24 @@ $page_name = 'pendaftaran';
             <div class="bawah">                
 
             <?php
-                $q5 = "SELECT * FROM seminar_peserta order by nama";
+                if (isset($_GET['pageno'])) {
+                    $pageno = $_GET['pageno'];
+                } else {
+                    $pageno = 1;
+                }
+
+                $no_of_records_per_page = 25;
+                $offset = ($pageno-1) * $no_of_records_per_page; 
+
+                $total_pages_sql = "SELECT COUNT(*) FROM seminar_peserta";
+                $result = $db_akses->OpenQuery($total_pages_sql);
+                $total_rows = mysqli_fetch_array($result)[0];
+                $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+                $q5 = "SELECT * FROM seminar_peserta  order by nama LIMIT $offset, $no_of_records_per_page";
                 $r5 = $db_akses->OpenQuery($q5);
+
+                echo "Total Data : " . $total_rows . "<br>";
                 echo '<div style="overflow-x:auto;">
                 <table border = 1 class="flyer" cellpadding="20" cellspacing="0" align="left" width="100%">
                 <tr>
@@ -52,7 +68,7 @@ $page_name = 'pendaftaran';
                     
                     
                 </tr>';
-                $Nomor = 0;
+                $Nomor = $offset;
                 while ($row = mysqli_fetch_array ($r5, MYSQLI_ASSOC)) {
                     if ($row['is_admin'] == 1) {
                         $is_admin = 'Ya';
@@ -80,9 +96,10 @@ $page_name = 'pendaftaran';
                           
                           </tr>
                           <tr>
-                          <td colspan=4 align="left"> '.$row['alamat_rumah'].'</td>
-                          <td colspan=3 align="left"> 
-                          <a href="pendaftaran_id_card.php?id_id_card='.$row['id'].'">Cetak ID Card</a> |
+                          <td colspan=3 align="left"> '.$row['alamat_rumah'].'</td>
+                          <td colspan=4 align="left"> 
+                          <a href="pendaftaran_id_card.php?id_id_card='.$row['id'].'">ID Card</a> |
+                          <a href="pendaftaran_certificate.php?id_id_certificate='.$row['id'].'">Certificate</a> |
                           <a href="pendaftaran_konfirmasi.php?id='.$row['id'].'">Konfirmasi</a> | 
                           <a href="pendaftaran_delete.php?id='.$row['id'].'">Hapus</a> | 
                           <a href="pendaftaran_set_as_admin.php?id='.$row['id'].'&status_admin='.$status_admin.'">'.$set_as_admin.'</a>
@@ -91,11 +108,25 @@ $page_name = 'pendaftaran';
                 }
                 echo '</table>'; 
                 echo '</div>';
+
+                
                 ?>
+
+                        <a href="?pageno=1">First</a>|
+                        <?php if($pageno <= 1){ echo ''; } ?>
+                        <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"> Prev</a> |
+                        
+                        <?php if($pageno >= $total_pages){ echo ''; } ?>
+                            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"> Next</a> |
+                        
+                        <a href="?pageno=<?php echo $total_pages; ?>">Last</a>
+                
             </div>    
         </div>
     </div>
 </div>
-<?php include "menu-footer.php";?>
+<?php include "menu-footer.php";
+    unset($db_akses);
+?>
 </body>
 </html>

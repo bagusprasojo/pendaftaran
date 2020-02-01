@@ -9,6 +9,10 @@
         function __construct(){
             $this->link = mysqli_connect('localhost', 'pengwili_ippat', 'F]I[uPmVvyQ3', 'pengwili_ippat');
         }
+
+        function __destruct() {
+            mysqli_close($this->link);
+        }
         
         function isEmailSudahAda(peserta $AObject){
             $sSQL = "SELECT * FROM peserta WHERE email = '$AObject->email' and id = <> '$AObject->id'";
@@ -78,6 +82,8 @@
                 return FALSE;
             }        
         }
+
+        
     }
     
 

@@ -50,13 +50,13 @@ $page_name = 'pendaftaran';
             $text_new = trim($AKata);
 
             $isSudahTurun = 0;
-            if (strlen($text_new) >= 29) {
+            if (strlen($text_new) >= 28) {
                 $text_a = explode(' ', trim($text_new));
                 
                 $text_new = '';
                 foreach($text_a as $word){
                     #$text_new = $text_new .' '.$word;
-                    if(strlen($text_new .' '.$word) > 29 and $isSudahTurun == 0){
+                    if(strlen($text_new .' '.$word) > 28 and $isSudahTurun == 0){
                         $text_new .= "\n".$word;
                         $isSudahTurun = 1;
                     } else {
@@ -153,7 +153,7 @@ $page_name = 'pendaftaran';
 
         Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y  , $black, $font, WordWrap_BP($peserta->nama));
 
-        if (strlen(trim($peserta->nama)) >= 29) {
+        if (strlen(trim($peserta->nama)) >= 28) {
             $start_y = $start_y + 50;
         }
         
@@ -183,6 +183,9 @@ $page_name = 'pendaftaran';
 
         imagedestroy($frame);
         imagedestroy($image);
+
+        unset($db_akses);
+        unset($peserta);
     ?>
 </body>
 
