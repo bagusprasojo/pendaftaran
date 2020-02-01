@@ -1,11 +1,6 @@
 TO DO
-0.Ubah ukuran id card
-1. Linkan qrcode di id card dengan data peserta
-2. Hilangkan hal modul
-3. Ubah pengumuman rakerwil
-4. Tambahkan menu cetak Sertifkat
-7. Buang footer sponsor
-8. Buang konfirmasi pembayaran administrator
+
+1. Tambahkan menu cetak Sertifkat
 
 DONE
 1. Tampilan halaman peserta hanya untuk photo
@@ -14,7 +9,11 @@ DONE
 4. Ubah Upload file hanya utk Photo
 5. Tambahkan Opsi untuk panitia/ Peserta
 6. Sembunyikan konfirmasi pembayaran 
-
+7.Ubah ukuran id card
+8. Linkan qrcode di id card dengan data peserta
+9. Hilangkan hal modul
+10. Ubah pengumuman rakerwil
+11. Buang footer sponsor
 
 
 
