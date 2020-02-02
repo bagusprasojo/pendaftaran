@@ -2,7 +2,7 @@
     include "dbconfig.php";
     include "pendaftaran_image_utils.php";
 
-    $_SESSION['halaman_terakhir'] = 'pendaftaran_id_card.php';
+    $_SESSION['halaman_terakhir'] = 'pendaftaran_certificate.php';
 
     if (isset($_SESSION['id']) == "") {    
         header('location: pendaftaran_login.php');    
@@ -77,8 +77,8 @@ $page_name = 'pendaftaran';
                                         
         $image = imagecreatefrompng($nama_qrcode);
 
-        $destination = imagecreatetruecolor(300, 300);
-        imagecopyresampled($destination, $image, 0, 0, 0, 0, 300, 300, 212, 212);
+        $destination = imagecreatetruecolor(600, 600);
+        imagecopyresampled($destination, $image, 0, 0, 0, 0, 600, 600, 212, 212);
 
 
         $frame = imagecreatefromfile('generate/sertifikat.jpg');
@@ -87,12 +87,14 @@ $page_name = 'pendaftaran';
         $pasphoto               = imagecreatefromfile($filename);
         list($width, $height)   = getimagesize($filename); 
 
-        $pasphoto_dest = imagecreatetruecolor(300, 300);
-        imagecopyresampled($pasphoto_dest, $pasphoto, 0, 0, 0, 0, 300, 300, $width, $height);
+        $pasphoto_dest = imagecreatetruecolor(600, 600);
+        imagecopyresampled($pasphoto_dest, $pasphoto, 0, 0, 0, 0, 600, 600, $width, $height);
         
+        $panjang_frame = imagesx($frame);
+
         #imagecopymerge ( resource $dst_im , resource $src_im , int $dst_x , int $dst_y , int $src_x , int $src_y , int $src_w , int $src_h , int $pct ) : bool
-        imagecopymerge(   $frame           , $pasphoto_dest      ,    400      , 650         , 0          , 0          , 300        , 300       , 100);
-        imagecopymerge(   $frame           , $destination        ,    2800     , 650         , 0          , 0          , 300        , 300       , 100);
+        imagecopymerge(   $frame           , $pasphoto_dest      ,    600                      , 600        , 0          , 0          , 600        , 600       , 100);
+        imagecopymerge(   $frame           , $destination        ,    $panjang_frame - 1200    , 600        , 0          , 0          , 600        , 600       , 100);
 
         $black = imagecolorallocate($frame, 0, 0, 0);
         $start_x = 200;
@@ -107,75 +109,40 @@ $page_name = 'pendaftaran';
         
         #echo $font;
 
-        $font_size = 60;
+        $font_size = 110;
+        
 
         $txt        = $peserta->nama;
         $bbox       = imagettfbbox($font_size, 0, $font, $txt);
 
-        $center1    = (imagesx($frame) / 2) - (($bbox[2] - $bbox[0]) / 2);
+        $center1    = ($panjang_frame / 2) - (($bbox[2] - $bbox[0]) / 2);
         
-        Imagettftext($frame, $font_size, 0, $center1, 1070, $black, $font, $txt);
+        Imagettftext($frame, $font_size, 0, $center1, 1650, $black, $font, $txt);
 
         $txt        = $peserta->fungsi;
         $bbox       = imagettfbbox($font_size, 0, $font, $txt);
-        $center1    = (imagesx($frame) / 2) - (($bbox[2] - $bbox[0]) / 2);
+        $center1    = ($panjang_frame / 2) - (($bbox[2] - $bbox[0]) / 2);
         
-        Imagettftext($frame, $font_size, 0, $center1, 1270, $black, $font, $txt);
-        
-        //Imagettftext($frame, $font_size, 0, $start_x + 200, $start_y  , $black, $font, ":");
-        
-        //
-
-        // $isSudahTurun = 0;
-        // if (strlen($peserta->nama) >= 29) {
-        //     $text_a = explode(' ', trim($peserta->nama));
-            
-        //     $text_new = '';
-        //     foreach($text_a as $word){
-        //         #$text_new = $text_new .' '.$word;
-        //         if(strlen($text_new .' '.$word) > 29 and $isSudahTurun == 0){
-        //             $text_new .= "\n".$word;
-        //             $isSudahTurun = 1;
-        //         } else {
-        //             $text_new .= " ".$word;
-        //         }
-        //     }
-        // } 
-
-        /*
-        Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y  , $black, $font, WordWrap_BP($peserta->nama));
-
-        if (strlen(trim($peserta->nama)) >= 29) {
-            $start_y = $start_y + 50;
-        }
+        Imagettftext($frame, $font_size, 0, $center1, 1950, $black, $font, $txt);
         
         
-        $start_y = $start_y + 50;
-        Imagettftext($frame, $font_size, 0, $start_x, $start_y, $black, $font, "Provinsi");
-        Imagettftext($frame, $font_size, 0, $start_x + 200, $start_y, $black, $font, ":");
-        Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y, $black, $font, $peserta->propinsi);
-        
-        $start_y = $start_y + 50;
-        Imagettftext($frame, $font_size, 0, $start_x, $start_y, $black, $font, "Kabupaten");
-        Imagettftext($frame, $font_size, 0, $start_x + 200, $start_y, $black, $font, ":");
-        Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y, $black, $font, $peserta->kabupaten);
-
-        $start_y = $start_y + 50;
-        Imagettftext($frame, $font_size, 0, $start_x, $start_y, $black, $font, "Jabatan");
-        Imagettftext($frame, $font_size, 0, $start_x + 200, $start_y, $black, $font, ":");
-        Imagettftext($frame, $font_size, 0, $start_x + 220, $start_y, $black, $font, WordWrap_BP($peserta->jabatan));
-        */
-        # Save the image to a file
 
         $nama_id_certificate = 'generate/'. $peserta->id . '_certificate.jpg';
         imagejpeg($frame, $nama_id_certificate);
-        echo "<img src= $nama_id_certificate height='75%' width='75%'/>";
+
+        if ($id_id_certificate != '' or $peserta->is_datang == '1'){
+          echo "<img src= $nama_id_certificate height='75%' width='75%'/>";
+        } else {
+            echo "Anda Belum Berhak Mencetak Sertifikat";
+        }
 
         # Output straight to the browser.
         #imagepng($frame);
 
         imagedestroy($frame);
         imagedestroy($image);
+        imagedestroy($destination);
+        imagedestroy($pasphoto_dest);
 
         unset($db_akses);
         unset($peserta);

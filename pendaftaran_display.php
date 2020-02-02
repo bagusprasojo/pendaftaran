@@ -1,7 +1,10 @@
 <?php 
-    include "dbconfig.php";    
- 
+    include "dbconfig.php";
     
+    $id_admin = '';
+    if (isset($_SESSION['id']) != "") {    
+        $id_admin = $_SESSION['id'];    
+    } 
     
     $page_name = 'pendaftaran';
 ?>
@@ -25,11 +28,16 @@
 </div>
 
 <?php 
+    $admin = new peserta();
+    $peserta->id = $id_admin;
+
     $peserta = new peserta();
     $peserta->id = $db_akses->mysqli_real_escape_string($_GET['display_id']);
 
     $db_akses = new db_akses();
     $db_akses->LoadByID($peserta);
+
+    $db_akses->LoadByID($admin);
         
 ?>
     <div class="konten">
@@ -164,9 +172,15 @@
                             </div>
 
                             <div class="area">                            
-                                No Telp Kantor : <br>
+                                1-No Telp Kantor : <br>
                                 <input type="text" value="<?php echo $peserta->no_telp_kantor?>" name="no_telp_kantor" class="input" placeholder=" No Telp Kantor">
                             </div>
+
+                            <?php if ($admin->is_admin == '1' ){?>
+                                <div class="area">
+                                    <input type="submit" class="submit" value="KONFIRMASI HADIR1">
+                                </div>
+                            <?php } ?>
                         </form>
 
 
@@ -180,6 +194,7 @@
 <?php
   unset($db_akses);
   unset($peserta);
+  unset($admin);
 ?>
 
 </body>

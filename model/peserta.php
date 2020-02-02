@@ -105,7 +105,8 @@ class peserta implements DAO{
     public $img_bas;
     public $img_kartu_nama;
     public $img_kwitansi;    
-	public $is_pembayaran_ok;
+    public $is_pembayaran_ok;
+    public $is_datang;
 
     public $tablename = 'seminar_peserta';
     
@@ -149,6 +150,7 @@ class peserta implements DAO{
         $sSQL = $sSQL . " , img_kartu_nama = '" . $this->img_kartu_nama . "'";
         $sSQL = $sSQL . " , img_kwitansi = '" . $this->img_kwitansi . "'";
 		$sSQL = $sSQL . " , is_pembayaran_ok = '" . $this->is_pembayaran_ok . "'";
+		$sSQL = $sSQL . " , is_datang = '" . $this->is_datang . "'";
 		
         $sSQL = $sSQL . " where id = '" . $this->id . "'";
 
@@ -195,6 +197,7 @@ class peserta implements DAO{
             $this->img_kartu_nama    = $AObjectSQLArray['img_kartu_nama'];
             $this->img_kwitansi      = $AObjectSQLArray['img_kwitansi'];
             $this->is_pembayaran_ok  = $AObjectSQLArray['is_pembayaran_ok'];
+            $this->is_datang         = $AObjectSQLArray['is_datang'];
 
         }    
     }
