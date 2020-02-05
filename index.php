@@ -33,6 +33,12 @@ $page_name = 'pendaftaran';
 	    <div class="pendaftaran">        	
             <div class="bawah">                
                 <div class="kiri">
+                    <?php
+                        $date_tutup = "2020-02-05";
+                        $date_now = date("Y-m-d");
+
+                        if ($date_tutup > $date_now){
+                    ?>
                     <div class="info">Batas Akhir pendaftaran Rakerwil IPPAT 2020  tanggal 4 Februari 2020. Pukul 23.59 WIB<div>
                     <form action="pendaftaran_proses.php" method="post">
                         <div class="area">
@@ -51,6 +57,14 @@ $page_name = 'pendaftaran';
                             <input type="submit" class="submit" value="KIRIM">
                         </div>
                     </form>
+                    <?php
+                        } else {
+                            ?>
+                                <div class="info">Pendaftaran Rakerwil IPPAT 2020  Sudah Ditutup<div>
+                    
+                            <?php
+                        }
+                    ?>
                 </div>
                 <div class="kanan" style = "display:none">
                     Informasi Pembayaran<br/>

@@ -54,7 +54,7 @@
                             }
                         ?>
                         <img src="<?php echo "data/" . $photo?>" height="472" width="100%">
-                        <div style = "display:none">
+                        <div>
                             <table >
                                 <?php if ($peserta->img_ktp != ''){ ?>
                                     <tr><td><a href="<?php echo "data/" . $peserta->img_ktp?>">KTP</a></td><td> : </td><td><img src="data/icon/ok-icon.png"></td></tr>
@@ -133,7 +133,7 @@
                             </div>
 
                             <div class="area">
-                                Jabatan : <a href='https://pengwilippatjateng.org/pendaftaran/data/module/004%2021%2012%2019%20Penyusunan%20ProKer%20Pengwil%20IPPAT%20Jateng%20v%2029%2001%202020.pdf' target="_blank"> Lihat Daftar Jabatan</a><br>    
+                                Jabatan : <a href='https://pengwilippatjateng.org/pendaftaran/data/module/004%2021%2012%2019%20Penyusunan%20ProKer%20Pengwil%20IPPAT%20Jateng%20v%2003022020.pdf' target="_blank"> Lihat Daftar Jabatan</a><br>    
                                 <input type="text" value="<?php echo $peserta->jabatan?>" name="jabatan" class="input" placeholder=" Jabatan">
                             </div>
 

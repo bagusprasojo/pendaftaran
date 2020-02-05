@@ -29,7 +29,7 @@
 
 <?php 
     $admin = new peserta();
-    $peserta->id = $id_admin;
+    $admin->id = $id_admin;
 
     $peserta = new peserta();
     $peserta->id = $db_akses->mysqli_real_escape_string($_GET['display_id']);
@@ -92,7 +92,14 @@
                         </div>
                     </div>
                     <div class="kiri">
-                        <form>
+                        
+                        <?php 
+                            if ($admin->is_admin == '1' ){?>
+                            <form action="pendaftaran_display_proses.php" method="post">
+                        <?php } else {?>
+                            <form>
+                        <?php }?>    
+                        
                             Nama Lengkap Dengan Gelar Akademik : <br>
                             <div class="area">                            
                                 <input type="text" value="<?php echo $peserta->nama?>" name="nama" class="input" placeholder=" Nama Lengkap Sesuai KTP & Gelar">
@@ -176,9 +183,19 @@
                                 <input type="text" value="<?php echo $peserta->no_telp_kantor?>" name="no_telp_kantor" class="input" placeholder=" No Telp Kantor">
                             </div>
 
+                            <input type="hidden" id="display_id" name="display_id" value="<?php echo $peserta->id?>">
+                            
+                            <div class="area">
+                                Kehadiran : <br>    
+                                <select class="input" name="kehadiran">
+                                    <option value="1" <?php if ($peserta->is_datang == "1") {echo "selected";} ?>>Hadir</option>
+                                    <option value="0" <?php if ($peserta->is_datang != "1") {echo "selected";} ?>>Tidak Hadir</option>                                    
+                                </select>
+                            </div>
+
                             <?php if ($admin->is_admin == '1' ){?>
                                 <div class="area">
-                                    <input type="submit" class="submit" value="KONFIRMASI HADIR1">
+                                    <input type="submit" class="submit" value="SUBMIT">
                                 </div>
                             <?php } ?>
                         </form>

@@ -1,4 +1,10 @@
 <?php
+    if (isset($_GET['pageno'])) {
+        $pageno = $_GET['pageno'];
+    } else {
+        $pageno = 1;
+    }
+
     include "dbconfig.php";
 
     $_SESSION['halaman_terakhir'] = 'pendaftaran_list.php';
@@ -36,11 +42,7 @@ $page_name = 'pendaftaran';
             <div class="bawah">                
 
             <?php
-                if (isset($_GET['pageno'])) {
-                    $pageno = $_GET['pageno'];
-                } else {
-                    $pageno = 1;
-                }
+                
 
                 $no_of_records_per_page = 25;
                 $offset = ($pageno-1) * $no_of_records_per_page; 
@@ -59,14 +61,12 @@ $page_name = 'pendaftaran';
                 <tr>
                 <th width="20">No</th>
                     <th>Nama <br>Email</th>                    
+                    <th>Jabatan</th>
                     <th>Tanggal Lahir</th>
                     <th>No KTP</th>
-                    <th>No & <br>Tanggal SK PPAT</th>
-                    
+                    <th>No & <br>Tanggal SK PPAT</th>                    
                     <th>No & <br/>Tanggal BAS PPAT</th>
                     <th>No WA & Telp Kantor</th>
-                    
-                    
                 </tr>';
                 $Nomor = $offset;
                 while ($row = mysqli_fetch_array ($r5, MYSQLI_ASSOC)) {
@@ -86,7 +86,8 @@ $page_name = 'pendaftaran';
                           <td rowspan=2>'.$Nomor.'</td>  
                           <td align="left">'.$row['nama'].'<br>' .$row['email']. '<br/><br/>
                             
-                          </td>                          
+                          </td>
+                          <td align="left">'.$row['jabatan'].'</td>                          
                           <td align="left">'.$row['tgl_lahir'].'</td>
                           
                           <td align="left">'.$row['no_ktp'].'</td>
@@ -97,7 +98,7 @@ $page_name = 'pendaftaran';
                           </tr>
                           <tr>
                           <td colspan=3 align="left"> '.$row['alamat_rumah'].'</td>
-                          <td colspan=4 align="left"> 
+                          <td colspan=5 align="left"> 
                           <a href="pendaftaran_id_card.php?id_id_card='.$row['id'].'">ID Card</a> |
                           <a href="pendaftaran_certificate.php?id_id_certificate='.$row['id'].'">Certificate</a> |
                           <a href="pendaftaran_konfirmasi.php?id='.$row['id'].'">Konfirmasi</a> | 
@@ -119,7 +120,8 @@ $page_name = 'pendaftaran';
                         <?php if($pageno >= $total_pages){ echo ''; } ?>
                             <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"> Next</a> |
                         
-                        <a href="?pageno=<?php echo $total_pages; ?>">Last</a>
+                        <a href="?pageno=<?php echo $total_pages; ?>">Last | </a>
+                        <a href="pendaftaran_list_export.php?pageno=<?php echo $pageno; ?>">Export Excel</a>
                 
             </div>    
         </div>
