@@ -27,7 +27,8 @@ interface DAO{
     public function generateSQLUpdate();
     public function generateSQLDelete();
     public function LoadObject($AObjectSQLArray);
-    
+    public function GetCode();
+    public function GetCodeFieldName();
  }
    
 class module implements DAO{
@@ -36,6 +37,14 @@ class module implements DAO{
     public $is_tampilkan;
 
     public $tablename = 'seminar_module';
+
+    public function getCode() {
+        return $this->id;
+    }
+
+    public function GetCodeFieldName(){
+        return 'id';
+    }
 
     public function generateSQLInsert() {
         $this->id = gen_uuid();
@@ -109,6 +118,14 @@ class peserta implements DAO{
     public $is_datang;
 
     public $tablename = 'seminar_peserta';
+
+    public function getCode() {
+        return $this->email;
+    }
+
+    public function GetCodeFieldName(){
+        return 'email';
+    }
     
     public function generateSQLInsert() {
         $this->id = gen_uuid();
@@ -125,6 +142,7 @@ class peserta implements DAO{
         $sSQL = $sSQL . " set tempat_lahir = '" . $this->tempat_lahir . "'";
         $sSQL = $sSQL . " , nama = '" . $this->nama . "'";
         $sSQL = $sSQL . " , email = '" . $this->email . "'";
+        $sSQL = $sSQL . " , passw = '" . $this->passw . "'";
         $sSQL = $sSQL . " , tgl_lahir = '" . $this->tgl_lahir . "'";
         $sSQL = $sSQL . " , alamat_rumah = '" . $this->alamat_rumah . "'";
         $sSQL = $sSQL . " , alamat_kantor = '" . $this->alamat_kantor . "'";

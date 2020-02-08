@@ -33,10 +33,12 @@ $page_name = 'pendaftaran';
 							<input type="password" name="password" class="input" placeholder=" Password">
 						</div>                    
 						<div class="area">
-							<input type="submit" class="submit" value="Login">
+							<input type="submit" name="btn_login" class="submit" value="Login">
+							<input type="submit" name="btn_lupa" class="submit" value="Lupa Password">
+							
 						</div>
 
-						<a href="pendaftaran_reset_password.php"> Lupa Password </a>
+						
 					</form>
 				</div>
             </div>	

@@ -1,6 +1,7 @@
 <?php
-include "dbconfig.php";
-$page_name = 'pendaftaran';
+    include "dbconfig.php";
+    $page_name = 'pendaftaran';
+    $db_akses = new db_akses();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,17 +15,55 @@ $page_name = 'pendaftaran';
 <?php include "menu-header.php";?>
 
 <?php
-    $email = "";
-    if (isset($_POST['email'])){
-        $email = $_POST['email'];
-    }
-
-    if ($email != ""){?>
+    if (isset($_POST['btn_reset'])) {?>
         <div class="konten">
             <div class="container_25">
                 <div class="pendaftaran">        	
                     <div class="bawah">
-                        <?php echo $email?>
+                        <?php 
+                            
+                            $email = "";
+                            if (isset($_POST['email'])){
+                                $email = $_POST['email'];
+                            }
+
+                            if ($email != ''){
+                                $peserta = new peserta();
+                                $peserta->email = $email;
+
+                                $db_akses->LoadByCode($peserta);
+                                if ($peserta->id == ''){
+                                    echo "Email <b>" . $email . "</b> Tidak Ditemukan !";
+                                } else {
+                                    $isi_email  = '';												
+                                    $isi_email .= "Terimakasih $nama<br>";
+                                    $isi_email .= "Anda telah mengajukan reset password<br>";
+                                    $isi_email .= "Silahkan klik url dibawah ini untuk melakukan reset password : <br>";
+                                    $isi_email .= "https://pengwilippatjateng.org/pendaftaran/pendaftaran_ubah_password.php?id=$peserta->id";
+
+                                    #echo $isi_email;
+
+                                    $topik_email="Reset Password Pendaftaran Online IPPAT Jawa Tengah";
+                                    $nama_penerima=$nama;
+                                    $email_dari="ippat.jateng@pengwilippatjateng.org";
+                                    $email_dari_nama = "Admin Pendaftaran Online IPPAT Jawa Tengah";
+                                    $email_tujuan="$email";
+                                    $email_cc="bagusprasojo@gmail.com";
+                                    include 'mail-smtp.php';
+                                        
+                                    if(!$mail->Send())
+                                    {
+                                    echo "Gagal mengirim data ke email, Silahkan ulangi kembali <p>";
+                                    echo "Mailer Error: " . $mail->ErrorInfo;
+                                    exit;
+                                    } else {            										
+                                        exit("<script>window.alert('Berhasil , silahkan cek email anda untuk melakukan reset password');
+                                        window.location='index.php';</script>");
+                                    }
+
+                                }
+                            }
+                        ?>
                     </div>	
                 </div>    
             </div>
@@ -48,7 +87,7 @@ $page_name = 'pendaftaran';
                                 <input type="email" name="email" class="input" placeholder=" Email">
                             </div>
                             <div class="area">
-                                <input type="submit" class="submit" value="Reset">
+                                <input type="submit" name = "btn_reset" class="submit" value="Reset">
                             </div>
                         </form>
                     </div>
@@ -59,7 +98,13 @@ $page_name = 'pendaftaran';
 
     <?php } ?>
 
-<?php include "menu-footer.php";?>
+<?php 
+    include "menu-footer.php";
+
+    unset($peserta);
+    unset($db_akses);
+?>
+
 </body>
 
 <script type="text/javascript">

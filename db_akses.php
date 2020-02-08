@@ -54,6 +54,12 @@
             $AObject->LoadObject($l_ObjectArray);            
         }
 
+        function LoadByCode(peserta &$AObject){
+            $sSQL = "SELECT * FROM " . $AObject->tablename . " WHERE upper(" . $AObject->getCodeFieldName() . ") = upper('" . $AObject->getCode(). "')";
+            $l_ObjectArray = $this->OpenQueryArray($sSQL);
+            $AObject->LoadObject($l_ObjectArray);            
+        }
+
         function SaveToDB(DAO $AObject ){
             if ($AObject->id == '') {
                 $query = $AObject->generateSQLInsert();

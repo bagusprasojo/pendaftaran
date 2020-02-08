@@ -1783,6 +1783,22 @@ body{
 	border:none;
 }
 
+.pendaftaran .bawah .kiri .area .input_read_only{
+	float:left;
+	width:80%;
+	padding-left:1%;
+	height:30px;
+	background: #ffffff;
+	overflow:hidden;
+	font-family: 'GothamBook';
+	font-size:16px;
+	color:#000;
+	-webkit-box-shadow: inset 1px 1px 0px 0px rgba(0,221,221,1);
+	-moz-box-shadow: inset 1px 1px 0px 0px rgba(0,221,221,1);
+	box-shadow: inset 1px 1px 0px 0px rgba(0,221,221,1);
+	border:none;
+}
+
 .pendaftaran .bawah .kiri .area .input2{
 	float:left;
 	width:12%;
