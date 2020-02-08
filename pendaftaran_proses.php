@@ -4,6 +4,7 @@ include "dbconfig.php";
 
 date_default_timezone_set('Asia/jakarta');
 
+
 $nama                   = $_POST['nama'];
 $email                  = $_POST['email'];
 $password               = $_POST['password'];

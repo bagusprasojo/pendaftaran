@@ -38,13 +38,38 @@ $page_name = 'pendaftaran';
 
 <div class="konten">
 	<div class="container_25">
-	    <div class="pendaftaran">        	
-            <div class="bawah">                
+	    <div class="pendaftaran"> 
+            <div class="bawah">
+                <div class="kanan">
+                    <form action="pendaftaran_list.php" method="post">
+                        <div class="area">
+                            Nama / Kota / Email : <input type="text" name="keyword" class="input" placeholder=" Keyword">
+                            <input type="submit" class="submit" value="Cari">
+                        </div>
+                    </form>
+                </div>
+            </div>
+                   	
+            <div class="bawah">                            
 
             <?php
                 
+                $keyword                = "";
+                if (isset($_POST['keyword'])) {
+                    $keyword    = $_POST['keyword'];
+                }
 
                 $no_of_records_per_page = 25;
+                $SQLFilterSearch        = "";
+                if ($keyword != "") {                
+
+                    $SQLFilterSearch = "and (upper(nama) like upper('%" . $keyword . "%') or ";
+                    $SQLFilterSearch = $SQLFilterSearch . " upper(email) like upper('%" . $keyword . "%') or ";
+                    $SQLFilterSearch = $SQLFilterSearch . " upper(kabupaten) like upper('%" . $keyword . "%')) ";
+
+                    $no_of_records_per_page = 2500;
+                }
+                
                 $offset = ($pageno-1) * $no_of_records_per_page; 
 
                 $total_pages_sql = "SELECT COUNT(*) FROM seminar_peserta";
@@ -52,10 +77,27 @@ $page_name = 'pendaftaran';
                 $total_rows = mysqli_fetch_array($result)[0];
                 $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-                $q5 = "SELECT * FROM seminar_peserta  order by nama LIMIT $offset, $no_of_records_per_page";
+                $q5 = "SELECT * FROM seminar_peserta where 1 = 1  " .
+                      $SQLFilterSearch . 
+                      " order by nama LIMIT $offset, $no_of_records_per_page";
                 $r5 = $db_akses->OpenQuery($q5);
 
+                #echo $q5  . "<br>";
                 echo "Total Data : " . $total_rows . "<br>";
+
+
+
+            ?>
+                <a href="?pageno=1">First</a>|
+                <?php if($pageno <= 1){ echo ''; } ?>
+                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"> Prev</a> |
+                
+                <?php if($pageno >= $total_pages){ echo ''; } ?>
+                    <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"> Next</a> |
+                
+                <a href="?pageno=<?php echo $total_pages; ?>">Last | </a>
+                <a href="pendaftaran_list_export.php?pageno=<?php echo $pageno; ?>">Export Excel</a><br>
+            <?php
                 echo '<div style="overflow-x:auto;">
                 <table border = 1 class="flyer" cellpadding="20" cellspacing="0" align="left" width="100%">
                 <tr>

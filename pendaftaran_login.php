@@ -35,6 +35,8 @@ $page_name = 'pendaftaran';
 						<div class="area">
 							<input type="submit" class="submit" value="Login">
 						</div>
+
+						<a href="pendaftaran_reset_password.php"> Lupa Password </a>
 					</form>
 				</div>
             </div>	

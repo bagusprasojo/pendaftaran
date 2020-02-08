@@ -86,7 +86,36 @@
                                 <?php } ?>    
                             </table>
                         </div>
+                        
+                        <div>
+                            <br>
+
+                            <?php 
+                                $sSQL = $peserta->generateSQLDaftarSeminar();
+                                $rs = $db_akses->OpenQuery($sSQL);
+
+                                echo '<div style="overflow-x:auto;">
+                                <table border = 1 class="flyer" cellpadding="20" cellspacing="0" align="left" width="100%">
+                                <tr>
+                                <th width="20">No</th>
+                                    <th>Seminar / Kegiatan</th> 
+                                </tr>';
+
+                                $Nomor = 0;
+                                while ($row = mysqli_fetch_array ($rs, MYSQLI_ASSOC)) {
+                                    $Nomor = $Nomor + 1;
+                
+                                    echo '<tr>
+                                        <td>'.$Nomor.'</td>  
+                                        <td align="left">'.$row['Seminar'].'</td>                          
+                                        </tr>';                    
+                                }
+                                echo '</table>'; 
+                                echo '</div>';
+                            ?>
+                        </div>
                     </div>
+                    
                     <div class="kiri">
                         <form action="pendaftaran_lengkap_proses.php" method="post">
                             Nama Lengkap Dengan Gelar Akademik : <br>

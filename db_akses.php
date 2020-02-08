@@ -15,7 +15,7 @@
         }
         
         function isEmailSudahAda(peserta $AObject){
-            $sSQL = "SELECT * FROM peserta WHERE email = '$AObject->email' and id = <> '$AObject->id'";
+            $sSQL = "SELECT * FROM peserta WHERE UPPER(email) = '. strtoupper($AObject->email) . ' and id = <> '$AObject->id'";
             #echo $sSQL;
             $l_peserta = mysqli_fetch_array(mysqli_query($this->link,$sSQL));
             if ($l_peserta['id'] != ''){

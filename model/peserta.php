@@ -163,6 +163,14 @@ class peserta implements DAO{
         return $sSQL;
     }
 
+    public function generateSQLDaftarSeminar(){
+        $sSQL = "select id, seminar_peserta.fungsi, 'Rakerwil IPPAT Jateng 2020' as Seminar, ".
+                "'2020-02-06' as Tanggal, 'Hotel Alana Solo' as Lokasi from seminar_peserta " .
+                "where id = '" . $this->id ."'";
+                
+        return $sSQL;
+    }
+
     public function LoadObject($AObjectSQLArray){
         if ($AObjectSQLArray['id'] != ''){
             $this->id                = $AObjectSQLArray['id'];
